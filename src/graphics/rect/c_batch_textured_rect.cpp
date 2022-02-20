@@ -73,13 +73,18 @@ namespace owd
 		m_state = enm_state::good;
 	}
 
+	void c_batch_textured_rect::add(std::shared_ptr<c_textured_rect>& rect)
+	{
+		rect->m_index = static_cast<float>(m_vec.size());
+		m_vec.push_back(rect);
+		m_should_update = true;
+	}
+
 	void c_batch_textured_rect::add
 	(float centre_x, float centre_y, float width, float height, std::shared_ptr<c_texture>& texture)
 	{
 		auto rect = std::make_shared<c_textured_rect>(centre_x, centre_y, width, height, texture);
-		rect->m_index = static_cast<float>(m_vec.size());
-		m_vec.push_back(rect);
-		m_should_update = true;
+		add(rect);
 	}
 
 	c_batch_textured_rect::c_batch_textured_rect()
@@ -298,6 +303,22 @@ namespace owd
 			samplers.push_back(i);
 		}
 		m_texture_uniform.init(shader->shader_program_id(), samplers);
+	}
+	void c_batches_textured::add(std::shared_ptr<c_textured_rect>& rect)
+	{
+		if (m_vec.empty())
+		{
+			auto batch = std::make_shared<c_batch_textured_rect>();
+			batch->init();
+			m_vec.push_back(batch);
+		}
+		else if (m_vec.back()->count() % m_max_texture_image_units == 0)
+		{
+			auto batch = std::make_shared<c_batch_textured_rect>();
+			batch->init();
+			m_vec.push_back(batch);
+		}
+		m_vec.back()->add(rect);
 	}
 	void c_batches_textured::add
 	(float centre_x, float centre_y, float width, float height, std::shared_ptr<c_texture>& texture)

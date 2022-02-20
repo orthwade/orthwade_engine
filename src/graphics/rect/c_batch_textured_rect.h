@@ -80,6 +80,7 @@ namespace owd
 	class c_batch_textured_rect : public c_basic_object
 	{
 	public:
+		void add(std::shared_ptr<c_textured_rect>& rect);
 		void add(float centre_x, float centre_y, float width, float height,
 			std::shared_ptr<c_texture>& texture);
 
@@ -124,6 +125,8 @@ namespace owd
 		c_batches_textured(std::shared_ptr<c_shader>& shader, GLint max_texture_image_units);
 
 		void init(std::shared_ptr<c_shader>& shader, GLint max_texture_image_units);
+
+		void add(std::shared_ptr<c_textured_rect>& rect);
 
 		void add(float centre_x, float centre_y, float width, float height,
 			std::shared_ptr<c_texture>& texture);

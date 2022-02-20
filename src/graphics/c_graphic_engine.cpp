@@ -96,7 +96,7 @@ namespace owd
 				c_logger::log_mode_override, { L"none", L"console_and_file", L"console", L"file" },
 				L"log_mode_override");
 
-			load_shader(L"rsc/shaders/batch_coloured.glsl", L"batch_coloured");
+			/*load_shader(L"rsc/shaders/batch_coloured.glsl", L"batch_coloured");
 
 			c_files_in_directory files_in_directory{};
 			
@@ -129,7 +129,7 @@ namespace owd
 			m_circles.add(-0.6f, -0.2f, 0.3f, 0.2f, 0.4f, 0.5f, 1.0f);
 			m_circles.add(-0.5f, -0.7f, 0.15f, 0.4f, 0.4f, 0.5f, 1.0f);
 			m_circles.add(0.5f, 0.1f, 0.15f, 0.4f, 0.9f, 0.5f, 1.0f);
-			m_rects.add(0.5f, 0.1f, 0.15f, 0.9f, 0.2f, 0.3f, 0.5f, 1.0f);
+			m_rects.add(0.5f, 0.1f, 0.15f, 0.9f, 0.2f, 0.3f, 0.5f, 1.0f);*/
 		}
 		m_logger << "----c_graphic_engine initializing OK----\n";
 	}
@@ -137,8 +137,8 @@ namespace owd
 	{
 		GL_CALL(glClear(GL_COLOR_BUFFER_BIT));
 
-		m_circles.draw();
 		m_rects.draw();
+		m_circles.draw();
 		m_rects_textured.draw();
 		m_test_imgui.update_window();
 	}

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0b868b5f-ed4a-41bc-a03b-335be184289d}</ProjectGuid>
-    <RootNamespace>orthwade_graphics</RootNamespace>
+    <ProjectGuid>{686ba2b6-306f-4586-b44d-b6ff47c872b2}</ProjectGuid>
+    <RootNamespace>orthwade_engine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -89,7 +89,6 @@
       <PreprocessorDefinitions>_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -106,7 +105,6 @@
       <PreprocessorDefinitions>_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,7 +121,6 @@
       <PreprocessorDefinitions>_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,7 +137,6 @@
       <PreprocessorDefinitions>_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,51 +147,107 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\debug\oal_debug.h" />
-    <ClInclude Include="src\filesystem\c_files_in_directory.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\c_window.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\c_shader_bank.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\c_graphic_engine.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\audio\c_sound_source_bank.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\audio\c_listener.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\audio\c_sound_bank.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\audio\c_sound_distance_model.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\audio\c_sound_engine.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\audio\c_sound_file.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\audio\c_openal_object.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClCompile Include="src\audio\c_listener.cpp" />
+    <ClCompile Include="src\audio\c_openal_object.cpp" />
+    <ClCompile Include="src\audio\c_sound.cpp" />
+    <ClCompile Include="src\audio\c_sound_bank.cpp" />
+    <ClCompile Include="src\audio\c_sound_buffer.cpp" />
+    <ClCompile Include="src\audio\c_sound_device.cpp" />
+    <ClCompile Include="src\audio\c_sound_distance_model.cpp" />
+    <ClCompile Include="src\audio\c_sound_engine.cpp" />
+    <ClCompile Include="src\audio\c_sound_file.cpp" />
+    <ClCompile Include="src\audio\c_sound_source.cpp" />
+    <ClCompile Include="src\audio\c_sound_source_bank.cpp" />
+    <ClCompile Include="src\audio\c_stereo_song.cpp" />
+    <ClCompile Include="src\audio\errors.cpp" />
+    <ClCompile Include="src\audio\ogg\ogg_.cpp" />
+    <ClCompile Include="src\debug\imgui\c_test_imgui.cpp" />
+    <ClCompile Include="src\debug\imgui\imgui.cpp" />
+    <ClCompile Include="src\debug\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\debug\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\debug\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\debug\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\debug\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\debug\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\debug\logger\logger.cpp" />
+    <ClCompile Include="src\filesystem\c_file.cpp" />
+    <ClCompile Include="src\filesystem\c_files_in_directory.cpp" />
+    <ClCompile Include="src\filesystem\c_file_bank.cpp" />
+    <ClCompile Include="src\filesystem\c_textfile.cpp" />
+    <ClCompile Include="src\filesystem\c_wtextfile.cpp" />
+    <ClCompile Include="src\filesystem\filestream.cpp" />
+    <ClCompile Include="src\graphics\c_colour_uniform.cpp" />
+    <ClCompile Include="src\graphics\c_glsl_uniform.cpp" />
+    <ClCompile Include="src\graphics\c_graphic_engine.cpp" />
+    <ClCompile Include="src\graphics\c_g_entity.cpp" />
+    <ClCompile Include="src\graphics\c_index_buffer.cpp" />
+    <ClCompile Include="src\graphics\c_mat4_uniform.cpp" />
+    <ClCompile Include="src\graphics\c_shader.cpp" />
+    <ClCompile Include="src\graphics\c_shader_bank.cpp" />
+    <ClCompile Include="src\graphics\c_texture.cpp" />
+    <ClCompile Include="src\graphics\c_texture_bank.cpp" />
+    <ClCompile Include="src\graphics\c_texture_uniform.cpp" />
+    <ClCompile Include="src\graphics\c_vertex_array.cpp" />
+    <ClCompile Include="src\graphics\c_vertex_buffer.cpp" />
+    <ClCompile Include="src\graphics\c_vertex_buffer_element.cpp" />
+    <ClCompile Include="src\graphics\c_vertex_buffer_layout.cpp" />
+    <ClCompile Include="src\graphics\c_window.cpp" />
+    <ClCompile Include="src\graphics\rect\c_batches.cpp" />
+    <ClCompile Include="src\graphics\rect\c_batch_coloured_circle.cpp" />
+    <ClCompile Include="src\graphics\rect\c_batch_coloured_figure.cpp" />
+    <ClCompile Include="src\graphics\rect\c_batch_coloured_rect.cpp" />
+    <ClCompile Include="src\graphics\rect\c_batch_textured_rect.cpp" />
+    <ClCompile Include="src\graphics\rect\c_graphic_unit.cpp" />
+    <ClCompile Include="src\graphics\rect\c_single_coloured_rect.cpp" />
+    <ClCompile Include="src\graphics\rect\c_single_textured_rect.cpp" />
+    <ClCompile Include="src\graphics\stb_image\stb_image.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\math\geometry\c_geom_circle.cpp" />
+    <ClCompile Include="src\math\geometry\c_geom_figure.cpp" />
+    <ClCompile Include="src\math\geometry\c_geom_triangle.cpp" />
+    <ClCompile Include="src\math\geometry\c_polar_coordinates.cpp" />
+    <ClCompile Include="src\math\geometry\s_rect.cpp" />
+    <ClCompile Include="src\math\geometry\s_xy.cpp" />
+    <ClCompile Include="src\math\glm\detail\glm.cpp" />
+    <ClCompile Include="src\math\vectors\c_orientation.cpp" />
+    <ClCompile Include="src\math\vectors\c_vector.cpp" />
+    <ClCompile Include="src\misc\current_directory\c_current_dir.cpp" />
+    <ClCompile Include="src\misc\c_async_timer.cpp" />
+    <ClCompile Include="src\misc\c_basic_object.cpp" />
+    <ClCompile Include="src\misc\c_convert_strings.cpp" />
+    <ClCompile Include="src\misc\c_cycle_thread.cpp" />
+    <ClCompile Include="src\misc\c_object_bank.cpp" />
+    <ClCompile Include="src\misc\sleep_for\c_sleep_for.cpp" />
+    <ClCompile Include="src\misc\text_file_to_string.cpp" />
+    <ClCompile Include="src\misc\time\time_date.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\audio\c_listener.h" />
+    <ClInclude Include="src\audio\c_openal_object.h" />
+    <ClInclude Include="src\audio\c_sound.h" />
+    <ClInclude Include="src\audio\c_sound_bank.h" />
+    <ClInclude Include="src\audio\c_sound_buffer.h" />
+    <ClInclude Include="src\audio\c_sound_device.h" />
+    <ClInclude Include="src\audio\c_sound_distance_model.h" />
+    <ClInclude Include="src\audio\c_sound_engine.h" />
+    <ClInclude Include="src\audio\c_sound_file.h" />
+    <ClInclude Include="src\audio\c_sound_source.h" />
+    <ClInclude Include="src\audio\c_sound_source_bank.h" />
+    <ClInclude Include="src\audio\c_stereo_song.h" />
+    <ClInclude Include="src\audio\errors.h" />
+    <ClInclude Include="src\audio\ogg\codec.h" />
+    <ClInclude Include="src\audio\ogg\config_types.h" />
+    <ClInclude Include="src\audio\ogg\ogg.h" />
+    <ClInclude Include="src\audio\ogg\ogg_.h" />
+    <ClInclude Include="src\audio\ogg\os_types.h" />
+    <ClInclude Include="src\audio\ogg\vorbisfile.h" />
+    <ClInclude Include="src\audio\openal\al.h" />
+    <ClInclude Include="src\audio\openal\alc.h" />
+    <ClInclude Include="src\audio\openal\alext.h" />
+    <ClInclude Include="src\audio\openal\efx-creative.h" />
+    <ClInclude Include="src\audio\openal\efx-presets.h" />
+    <ClInclude Include="src\audio\openal\efx.h" />
+    <ClInclude Include="src\audio\openal\openal.h" />
     <ClInclude Include="src\debug\imgui\c_test_imgui.h" />
     <ClInclude Include="src\debug\imgui\imconfig.h" />
     <ClInclude Include="src\debug\imgui\imgui.h" />
@@ -206,64 +258,32 @@
     <ClInclude Include="src\debug\imgui\imstb_rectpack.h" />
     <ClInclude Include="src\debug\imgui\imstb_textedit.h" />
     <ClInclude Include="src\debug\imgui\imstb_truetype.h" />
-    <ClInclude Include="src\filesystem\c_file.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\filesystem\c_file_bank.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\filesystem\c_textfile.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\filesystem\c_wtextfile.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\filesystem\filestream.h" />
-    <ClInclude Include="src\graphics\c_g_entity.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\c_mat4_uniform.h" />
-    <ClInclude Include="src\graphics\c_texture_bank.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\c_texture_uniform.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="src\debug\logger\logger.h" />
+    <ClInclude Include="src\debug\oal_debug.h" />
     <ClInclude Include="src\debug\ogl_debug.h" />
+    <ClInclude Include="src\filesystem\c_file.h" />
+    <ClInclude Include="src\filesystem\c_files_in_directory.h" />
+    <ClInclude Include="src\filesystem\c_file_bank.h" />
+    <ClInclude Include="src\filesystem\c_textfile.h" />
+    <ClInclude Include="src\filesystem\c_wtextfile.h" />
+    <ClInclude Include="src\filesystem\filestream.h" />
+    <ClInclude Include="src\graphics\c_colour_uniform.h" />
     <ClInclude Include="src\graphics\c_glsl_uniform.h" />
-    <ClInclude Include="src\graphics\c_texture.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="src\graphics\c_graphic_engine.h" />
+    <ClInclude Include="src\graphics\c_g_entity.h" />
+    <ClInclude Include="src\graphics\c_index_buffer.h" />
+    <ClInclude Include="src\graphics\c_mat4_uniform.h" />
+    <ClInclude Include="src\graphics\c_shader.h" />
+    <ClInclude Include="src\graphics\c_shader_bank.h" />
+    <ClInclude Include="src\graphics\c_texture.h" />
+    <ClInclude Include="src\graphics\c_texture_bank.h" />
+    <ClInclude Include="src\graphics\c_texture_uniform.h" />
     <ClInclude Include="src\graphics\c_vertex_array.h" />
     <ClInclude Include="src\graphics\c_vertex_buffer.h" />
-    <ClInclude Include="src\graphics\c_shader.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\c_colour_uniform.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\c_index_buffer.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\c_vertex_buffer_element.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\c_vertex_buffer_layout.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="src\graphics\c_vertex_buffer_element.h" />
+    <ClInclude Include="src\graphics\c_vertex_buffer_layout.h" />
+    <ClInclude Include="src\graphics\c_window.h" />
+    <ClInclude Include="src\graphics\fonts\fonts.h" />
     <ClInclude Include="src\graphics\fonts\freetype\autohint.h" />
     <ClInclude Include="src\graphics\fonts\freetype\cffotypes.h" />
     <ClInclude Include="src\graphics\fonts\freetype\cfftypes.h" />
@@ -300,16 +320,19 @@
     <ClInclude Include="src\graphics\fonts\freetype\ftlist.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftlogging.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftlzw.h" />
+    <ClInclude Include="src\graphics\fonts\freetype\ftmac.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftmemory.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftmm.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftmodapi.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftmoderr.h" />
+    <ClInclude Include="src\graphics\fonts\freetype\ftmodule.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftobjs.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftoption.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftotval.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftoutln.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftparams.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftpfr.h" />
+    <ClInclude Include="src\graphics\fonts\freetype\ftpsprop.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftrender.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftrfork.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftserv.h" />
@@ -320,6 +343,7 @@
     <ClInclude Include="src\graphics\fonts\freetype\ftstroke.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftsynth.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftsystem.h" />
+    <ClInclude Include="src\graphics\fonts\freetype\fttrace.h" />
     <ClInclude Include="src\graphics\fonts\freetype\fttrigon.h" />
     <ClInclude Include="src\graphics\fonts\freetype\fttypes.h" />
     <ClInclude Include="src\graphics\fonts\freetype\ftvalid.h" />
@@ -332,13 +356,17 @@
     <ClInclude Include="src\graphics\fonts\freetype\sfnt.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svbdf.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svcfftl.h" />
+    <ClInclude Include="src\graphics\fonts\freetype\svcid.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svfntfmt.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svgldict.h" />
+    <ClInclude Include="src\graphics\fonts\freetype\svgxval.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svkern.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svmetric.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svmm.h" />
+    <ClInclude Include="src\graphics\fonts\freetype\svotval.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svpfr.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svpostnm.h" />
+    <ClInclude Include="src\graphics\fonts\freetype\svprop.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svpscmap.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svpsinfo.h" />
     <ClInclude Include="src\graphics\fonts\freetype\svsfnt.h" />
@@ -353,7 +381,6 @@
     <ClInclude Include="src\graphics\fonts\freetype\tttags.h" />
     <ClInclude Include="src\graphics\fonts\freetype\tttypes.h" />
     <ClInclude Include="src\graphics\fonts\freetype\wofftypes.h" />
-    <ClInclude Include="src\graphics\fonts\fonts.h" />
     <ClInclude Include="src\graphics\opengl\eglew.h" />
     <ClInclude Include="src\graphics\opengl\glew.h" />
     <ClInclude Include="src\graphics\opengl\glfw3.h" />
@@ -361,49 +388,21 @@
     <ClInclude Include="src\graphics\opengl\glxew.h" />
     <ClInclude Include="src\graphics\opengl\opengl.h" />
     <ClInclude Include="src\graphics\opengl\wglew.h" />
-    <ClInclude Include="src\graphics\rect\c_batch_coloured_rect.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="src\graphics\rect\c_batches.h" />
+    <ClInclude Include="src\graphics\rect\c_batch_coloured_circle.h" />
+    <ClInclude Include="src\graphics\rect\c_batch_coloured_figure.h" />
+    <ClInclude Include="src\graphics\rect\c_batch_coloured_rect.h" />
     <ClInclude Include="src\graphics\rect\c_batch_textured_rect.h" />
-    <ClInclude Include="src\graphics\rect\c_batch_coloured_circle.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\graphics\rect\c_graphic_unit.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="src\graphics\rect\c_graphic_unit.h" />
     <ClInclude Include="src\graphics\rect\c_single_coloured_rect.h" />
-    <ClInclude Include="src\graphics\rect\c_single_textured_rect.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="src\graphics\rect\c_single_textured_rect.h" />
     <ClInclude Include="src\graphics\stb_image\stb_image.h" />
-    <ClInclude Include="src\math\geometry\c_geom_circle.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\math\geometry\c_geom_figure.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\math\geometry\c_polar_coordinates.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\math\geometry\c_geom_triangle.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\math\geometry\s_rect.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\math\geometry\s_xy.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="src\math\geometry\c_geom_circle.h" />
+    <ClInclude Include="src\math\geometry\c_geom_figure.h" />
+    <ClInclude Include="src\math\geometry\c_geom_triangle.h" />
+    <ClInclude Include="src\math\geometry\c_polar_coordinates.h" />
+    <ClInclude Include="src\math\geometry\s_rect.h" />
+    <ClInclude Include="src\math\geometry\s_xy.h" />
     <ClInclude Include="src\math\glm\common.hpp" />
     <ClInclude Include="src\math\glm\detail\compute_common.hpp" />
     <ClInclude Include="src\math\glm\detail\compute_vector_relational.hpp" />
@@ -686,227 +685,18 @@
     <ClInclude Include="src\math\glm\vec3.hpp" />
     <ClInclude Include="src\math\glm\vec4.hpp" />
     <ClInclude Include="src\math\glm\vector_relational.hpp" />
-    <ClInclude Include="src\misc\c_async_timer.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\misc\c_basic_object.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\misc\c_cycle_thread.h" />
-    <ClInclude Include="src\math\vectors\c_vector.h" />
     <ClInclude Include="src\math\vectors\c_orientation.h" />
-    <ClInclude Include="src\audio\c_sound.h" />
-    <ClInclude Include="src\audio\c_sound_buffer.h" />
-    <ClInclude Include="src\audio\c_sound_device.h" />
-    <ClInclude Include="src\audio\c_sound_source.h" />
-    <ClInclude Include="src\audio\ogg\codec.h" />
-    <ClInclude Include="src\audio\ogg\config_types.h" />
-    <ClInclude Include="src\audio\ogg\ogg.h" />
-    <ClInclude Include="src\audio\ogg\ogg_.h" />
-    <ClInclude Include="src\audio\ogg\os_types.h" />
-    <ClInclude Include="src\audio\ogg\vorbisfile.h" />
-    <ClInclude Include="src\audio\openal\al.h" />
-    <ClInclude Include="src\audio\openal\alc.h" />
-    <ClInclude Include="src\audio\openal\alext.h" />
-    <ClInclude Include="src\audio\openal\efx-creative.h" />
-    <ClInclude Include="src\audio\openal\efx-presets.h" />
-    <ClInclude Include="src\audio\openal\efx.h" />
-    <ClInclude Include="src\audio\openal\openal.h" />
-    <ClInclude Include="src\debug\logger\logger.h" />
+    <ClInclude Include="src\math\vectors\c_vector.h" />
     <ClInclude Include="src\misc\current_directory\c_current_dir.h" />
-    <ClInclude Include="src\misc\c_object_bank.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\misc\misc_defines.h" />
+    <ClInclude Include="src\misc\c_async_timer.h" />
+    <ClInclude Include="src\misc\c_basic_object.h" />
     <ClInclude Include="src\misc\c_convert_strings.h" />
-    <ClInclude Include="src\misc\text_file_to_string.h" />
+    <ClInclude Include="src\misc\c_cycle_thread.h" />
+    <ClInclude Include="src\misc\c_object_bank.h" />
+    <ClInclude Include="src\misc\misc_defines.h" />
     <ClInclude Include="src\misc\sleep_for\c_sleep_for.h" />
+    <ClInclude Include="src\misc\text_file_to_string.h" />
     <ClInclude Include="src\misc\time\time_date.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\filesystem\c_files_in_directory.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_window.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_shader_bank.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_graphic_engine.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\audio\c_sound_source_bank.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\audio\c_listener.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\audio\c_sound_bank.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\audio\c_sound_distance_model.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\audio\c_sound_engine.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\audio\c_sound_file.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\audio\c_openal_object.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\debug\imgui\c_test_imgui.cpp" />
-    <ClCompile Include="src\debug\imgui\imgui.cpp" />
-    <ClCompile Include="src\debug\imgui\imgui_demo.cpp" />
-    <ClCompile Include="src\debug\imgui\imgui_draw.cpp" />
-    <ClCompile Include="src\debug\imgui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="src\debug\imgui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="src\debug\imgui\imgui_tables.cpp" />
-    <ClCompile Include="src\debug\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="src\filesystem\c_file.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\filesystem\c_file_bank.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\filesystem\c_textfile.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\filesystem\c_wtextfile.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\filesystem\filestream.cpp" />
-    <ClCompile Include="src\graphics\c_g_entity.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_mat4_uniform.cpp" />
-    <ClCompile Include="src\graphics\c_texture_bank.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_texture_uniform.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_glsl_uniform.cpp" />
-    <ClCompile Include="src\graphics\c_texture.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_vertex_array.cpp" />
-    <ClCompile Include="src\graphics\c_vertex_buffer.cpp" />
-    <ClCompile Include="src\graphics\c_shader.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_colour_uniform.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_index_buffer.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_vertex_buffer_element.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\c_vertex_buffer_layout.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\rect\c_batch_coloured_rect.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\rect\c_batch_textured_rect.cpp" />
-    <ClCompile Include="src\graphics\rect\c_batch_coloured_circle.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\rect\c_graphic_unit.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\rect\c_single_coloured_rect.cpp" />
-    <ClCompile Include="src\graphics\rect\c_single_textured_rect.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\graphics\stb_image\stb_image.cpp" />
-    <ClCompile Include="src\math\geometry\c_geom_circle.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\math\geometry\c_geom_figure.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\math\geometry\c_polar_coordinates.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\math\geometry\c_geom_triangle.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\math\geometry\s_rect.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\math\geometry\s_xy.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\math\glm\detail\glm.cpp" />
-    <ClCompile Include="src\misc\c_async_timer.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\misc\c_basic_object.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\misc\c_cycle_thread.cpp" />
-    <ClCompile Include="src\math\vectors\c_vector.cpp" />
-    <ClCompile Include="src\math\vectors\c_orientation.cpp" />
-    <ClCompile Include="src\audio\c_sound.cpp" />
-    <ClCompile Include="src\audio\c_sound_buffer.cpp" />
-    <ClCompile Include="src\audio\c_sound_device.cpp" />
-    <ClCompile Include="src\audio\c_sound_source.cpp" />
-    <ClCompile Include="src\audio\ogg\ogg_.cpp" />
-    <ClCompile Include="src\debug\logger\logger.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\misc\current_directory\c_current_dir.cpp" />
-    <ClCompile Include="src\misc\c_convert_strings.cpp" />
-    <ClCompile Include="src\misc\c_object_bank.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\misc\text_file_to_string.cpp" />
-    <ClCompile Include="src\misc\sleep_for\c_sleep_for.cpp" />
-    <ClCompile Include="src\misc\time\time_date.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\math\glm\detail\func_common.inl" />
