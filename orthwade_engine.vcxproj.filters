@@ -234,6 +234,15 @@
     <ClCompile Include="src\misc\text_file_to_string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\batches\c_graphic_unit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\batches\c_graphic_batch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\batches\c_batch_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\audio\ogg\codec.h">
@@ -1659,6 +1668,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\misc\text_file_to_string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\batches\c_graphic_unit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\batches\c_graphic_batch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\batches\c_batch_handler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

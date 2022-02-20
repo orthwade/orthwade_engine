@@ -6,8 +6,6 @@
 
 namespace owd
 {
-	
-
 	class c_geom_figure
 	{
 	public:

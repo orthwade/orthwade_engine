@@ -32,7 +32,8 @@ namespace owd
 
 		void bind();
 		void unbind();
-		std::vector<uint32_t> indices();
+		inline std::vector<uint32_t>& indices() { return m_indices; }
+		inline size_t count() { return m_indices.size(); }
 	private:
 		std::wstring m_name{ L"c_index_buffer_object" };
 

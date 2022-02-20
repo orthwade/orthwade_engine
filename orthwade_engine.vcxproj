@@ -176,6 +176,18 @@
     <ClCompile Include="src\filesystem\c_textfile.cpp" />
     <ClCompile Include="src\filesystem\c_wtextfile.cpp" />
     <ClCompile Include="src\filesystem\filestream.cpp" />
+    <ClCompile Include="src\graphics\batches\c_batch_handler.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\graphics\batches\c_graphic_batch.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\graphics\batches\c_graphic_unit.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="src\graphics\c_colour_uniform.cpp" />
     <ClCompile Include="src\graphics\c_glsl_uniform.cpp" />
     <ClCompile Include="src\graphics\c_graphic_engine.cpp" />
@@ -267,6 +279,18 @@
     <ClInclude Include="src\filesystem\c_textfile.h" />
     <ClInclude Include="src\filesystem\c_wtextfile.h" />
     <ClInclude Include="src\filesystem\filestream.h" />
+    <ClInclude Include="src\graphics\batches\c_batch_handler.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\graphics\batches\c_graphic_batch.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\graphics\batches\c_graphic_unit.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="src\graphics\c_colour_uniform.h" />
     <ClInclude Include="src\graphics\c_glsl_uniform.h" />
     <ClInclude Include="src\graphics\c_graphic_engine.h" />
