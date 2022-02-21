@@ -3,13 +3,10 @@
 #include "../c_index_buffer.h"
 #include "../c_vertex_array.h"
 #include "../c_vertex_buffer_layout.h"
-#include "../c_texture.h"
 #include "../c_shader.h"
-#include "../c_texture_uniform.h"
 #include "../c_mat4_uniform.h"
 #include "../../math/glm/ext/matrix_clip_space.hpp"
 #include "../c_window.h"
-#include "../c_colour_uniform.h"
 #include "../c_shader_bank.h"
 #include "../../math/geometry/s_xy.h"
 
@@ -59,7 +56,7 @@ namespace owd
 
 		inline gl_indices_t& indices_no_batch() { return m_indices; }
 
-		gl_indices_t indices_batch();
+		gl_indices_t indices_batch(gl_index_t max_index);
 
 		inline gl_index_t max_index() { return *std::max_element(m_indices.begin(), m_indices.end()); }
 
@@ -95,7 +92,6 @@ namespace owd
 		s_colour m_colour{};
 
 		enm_state m_state = enm_state::good;
-
 
 		inline xy_t& centre() { return m_centre; }
 	};

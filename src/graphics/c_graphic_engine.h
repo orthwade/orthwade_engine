@@ -10,6 +10,7 @@
 #include "../filesystem/c_files_in_directory.h"
 #include "fonts/fonts.h"
 #include "rect/c_batch_coloured_circle.h"
+#include "batches/c_batch_handler.h"
 
 namespace owd
 {
@@ -193,19 +194,19 @@ namespace owd
 		/// Get batches of coloured rectangles
 		/// </summary>
 		/// <returns></returns>
-		inline c_batches_coloured_rect& get_batches_coloured_rect() { return m_rects; }
+		//inline c_batches_coloured_rect& get_batches_coloured_rect() { return m_rects; }
 
 		/// <summary>
 		/// Get batches of coloured circles.
 		/// </summary>
 		/// <returns></returns>
-		inline c_batches_coloured_circle& get_batches_coloured_circle() { return m_circles; }
+		//inline c_batches_coloured_circle& get_batches_coloured_circle() { return m_circles; }
 
 		/// <summary>
 		/// Get batches of textured rectangles.
 		/// </summary>
 		/// <returns></returns>
-		inline c_batches_textured& get_batches_textured_rects() { return m_rects_textured; }
+		//inline c_batches_textured& get_batches_textured_rects() { return m_rects_textured; }
 
 	protected:
 		static std::pair<int32_t, uint32_t> init_opengl();
@@ -248,9 +249,13 @@ namespace owd
 		float increment_green = 0.01f;
 		float m_green = 0.0f;
 		
-		c_batches_textured m_rects_textured{};
-		c_batches_coloured_circle m_circles{};
-		c_batches_coloured_rect m_rects{};
+		//c_batches_textured m_rects_textured{};
+		//c_batches_coloured_circle m_circles{};
+		//c_batches_coloured_rect m_rects{};
+
+		c_batch_handler* m_batch_handler_ptr = c_batch_handler::get_instance();
+
+		c_batch_handler& m_batch_handler = *m_batch_handler_ptr;
 
 		void default_draw_function();
 		static c_graphic_engine* m_singleton;
@@ -260,5 +265,15 @@ namespace owd
 		
 		c_graphic_engine(const c_graphic_engine&) = delete;
 		c_graphic_engine& operator=(const c_graphic_engine&) = delete;
+
+		void add_rect(float centre_x, float centre_y, float width, float height,
+			float red, float green, float blue, float alpha, uint16_t level);
+
+		void add_circle(float centre_x, float centre_y, float radius,
+			float red, float green, float blue, float alpha, uint16_t level);
+
+		void add_textured(float centre_x, float centre_y, float width, float height,
+			texture_t& texture, uint16_t level);
+
 	};
 }

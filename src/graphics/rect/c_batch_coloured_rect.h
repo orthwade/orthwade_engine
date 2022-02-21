@@ -126,7 +126,7 @@ namespace owd
 		std::shared_ptr<c_coloured_rect>& get_rect(index_t index);
 		void erase(index_t index);
 		void clear();
-
+		
 		void draw();
 
 		void set			(index_t index, float centre_x, float centre_y, float width, float height);

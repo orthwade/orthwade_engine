@@ -105,4 +105,5 @@ namespace owd
 
 		void compile();
 	};
+	typedef std::shared_ptr<c_shader> shader_t;
 }

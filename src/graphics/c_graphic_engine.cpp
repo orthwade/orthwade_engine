@@ -130,6 +130,16 @@ namespace owd
 			m_circles.add(-0.5f, -0.7f, 0.15f, 0.4f, 0.4f, 0.5f, 1.0f);
 			m_circles.add(0.5f, 0.1f, 0.15f, 0.4f, 0.9f, 0.5f, 1.0f);
 			m_rects.add(0.5f, 0.1f, 0.15f, 0.9f, 0.2f, 0.3f, 0.5f, 1.0f);*/
+			add_rect(0.5f, 0.1f, 0.15f, 0.9f, 0.2f, 0.3f, 0.5f, 1.0f, 1);
+			add_rect(-0.5f, 0.1f, 0.25f, 0.9f, 0.3f, 0.3f, 0.5f, 1.0f, 0);
+
+			add_circle(0.5f, 0.0f, 0.15f, 0.4f, 0.9f, 0.5f, 1.0f, 0);
+			add_rect(0.0f, 0.5f, 0.3f, 0.3f, 0.9f, 0.3f, 0.5f, 1.0f, 0);
+			load_texture(L"rsc/textures/e_green.png");
+			add_textured(0.5f, 0.0f, 0.7f, 0.7f, m_texture_bank.last(), 2);
+
+
+
 		}
 		m_logger << "----c_graphic_engine initializing OK----\n";
 	}
@@ -137,9 +147,10 @@ namespace owd
 	{
 		GL_CALL(glClear(GL_COLOR_BUFFER_BIT));
 
-		m_rects.draw();
-		m_circles.draw();
-		m_rects_textured.draw();
+		//m_rects.draw();
+		//m_circles.draw();
+		//m_rects_textured.draw();
+		m_batch_handler.draw();
 		m_test_imgui.update_window();
 	}
 	
@@ -177,4 +188,19 @@ namespace owd
     c_graphic_engine::~c_graphic_engine()
     {
     }
+	void c_graphic_engine::add_rect(float centre_x, float centre_y, float width, float height,
+		float red, float green, float blue, float alpha, uint16_t level)
+	{
+		m_batch_handler.add_rect(centre_x, centre_y, width, height, red, green, blue, alpha, level);
+	}
+	void c_graphic_engine::add_circle(float centre_x, float centre_y, float radius, 
+		float red, float green, float blue, float alpha, uint16_t level)
+	{
+		m_batch_handler.add_circle(centre_x, centre_y, radius, red, green, blue, alpha, level);
+	}
+	void c_graphic_engine::add_textured(float centre_x, float centre_y, float width, float height, 
+		texture_t& texture, uint16_t level)
+	{
+		m_batch_handler.add_textured(centre_x, centre_y, width, height, texture, level);
+	}
 }

@@ -180,6 +180,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="src\graphics\batches\c_batch_handler_.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="src\graphics\batches\c_graphic_batch.cpp">
       <SubType>
       </SubType>
@@ -188,8 +192,16 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="src\graphics\batches\c_graphic_unit_textured.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="src\graphics\c_colour_uniform.cpp" />
     <ClCompile Include="src\graphics\c_glsl_uniform.cpp" />
+    <ClCompile Include="src\graphics\batches\c_graphic_batch_textured.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="src\graphics\c_graphic_engine.cpp" />
     <ClCompile Include="src\graphics\c_g_entity.cpp" />
     <ClCompile Include="src\graphics\c_index_buffer.cpp" />
@@ -283,6 +295,10 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="src\graphics\batches\c_batch_handler_.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="src\graphics\batches\c_graphic_batch.h">
       <SubType>
       </SubType>
@@ -291,8 +307,16 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="src\graphics\batches\c_graphic_unit_textured.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="src\graphics\c_colour_uniform.h" />
     <ClInclude Include="src\graphics\c_glsl_uniform.h" />
+    <ClInclude Include="src\graphics\batches\c_graphic_batch_textured.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="src\graphics\c_graphic_engine.h" />
     <ClInclude Include="src\graphics\c_g_entity.h" />
     <ClInclude Include="src\graphics\c_index_buffer.h" />

@@ -65,4 +65,5 @@ namespace owd
 
 		byte_t* m_data_buffer = nullptr;
 	};
+	typedef std::shared_ptr<c_texture> texture_t;
 }

@@ -1,29 +1,28 @@
 #pragma once
-#include "c_graphic_unit.h"
+#include "c_graphic_unit_textured.h"
 
 namespace owd
 {
-	typedef std::shared_ptr<c_graphic_unit> g_unit_t;
-	class c_graphic_batch
+	class c_graphic_batch_textured
 	{
 	public:
-		c_graphic_batch();
-		c_graphic_batch(uint16_t level);
+		c_graphic_batch_textured();
+		c_graphic_batch_textured(uint16_t level);
 
-		~c_graphic_batch() = default;
+		~c_graphic_batch_textured() = default;
 
-		void add(g_unit_t& unit);
+		void add(g_unit_textured_t & unit);
 		void draw();
 
 		inline size_t indices_count() { return m_index_buffer.count(); }
 		inline size_t vertices_count() { return m_vertex_buffer.count(); }
-		inline static g_unit_t& empty_unit() { return c_graphic_unit::empty_unit(); }
-		g_unit_t& get_unit(index_t index);
+		inline static g_unit_textured_t& empty_unit() { return c_graphic_unit_textured::empty_unit(); }
+		g_unit_textured_t& get_unit(index_t index);
 
-		inline std::vector<g_unit_t>& get_vec() { return m_vec; }
+		inline std::vector<g_unit_textured_t>& get_vec() { return m_vec; }
 
 		void erase(index_t index);
-		
+
 		inline gl_index_t max_index() { return m_index_buffer.max_index(); }
 
 	private:
@@ -40,7 +39,7 @@ namespace owd
 
 		bool m_should_update = false;
 
-		std::vector<g_unit_t> m_vec{};
+		std::vector<g_unit_textured_t> m_vec{};
 
 		void update();
 	};

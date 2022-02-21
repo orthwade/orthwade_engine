@@ -1,12 +1,12 @@
-#include "c_graphic_batch.h"
+#include "c_graphic_batch_textured.h"
 
 namespace owd
 {
-    c_graphic_batch::c_graphic_batch()
-        : c_graphic_batch(0)
+    c_graphic_batch_textured::c_graphic_batch_textured()
+        : c_graphic_batch_textured(0)
     {
     }
-    c_graphic_batch::c_graphic_batch(uint16_t level)
+    c_graphic_batch_textured::c_graphic_batch_textured(uint16_t level)
         : m_level(level)
     {
         m_vertex_array.bind();
@@ -14,24 +14,30 @@ namespace owd
         m_index_buffer.bind();
 
         m_vertex_buffer_layout.add_element(2);
-        m_vertex_buffer_layout.add_element(4);
+        m_vertex_buffer_layout.add_element(2);
+        m_vertex_buffer_layout.add_element(1);
 
         m_vertex_array.add_buffer(m_vertex_buffer, m_vertex_buffer_layout);
 
         m_should_update = true;
     }
-    void c_graphic_batch::add(g_unit_t& unit)
+    void c_graphic_batch_textured::add(g_unit_textured_t& unit)
     {
         m_vec.push_back(unit);
         m_should_update = true;
     }
-    void c_graphic_batch::draw()
+    void c_graphic_batch_textured::draw()
     {
         m_vertex_array.bind();
+        m_index_buffer.bind();
         update();
+        for (index_t i = 0; i != m_vec.size(); ++i)
+        {
+            GL_CALL(glBindTextureUnit(i, m_vec[i]->get_texture()->gl_id()));
+        }
         GL_CALL(glDrawElements(GL_TRIANGLES, indices_count(), GL_UNSIGNED_INT, nullptr));
     }
-    g_unit_t& c_graphic_batch::get_unit(index_t index)
+    g_unit_textured_t& c_graphic_batch_textured::get_unit(index_t index)
     {
         if (index < m_vec.size())
         {
@@ -42,7 +48,7 @@ namespace owd
             return empty_unit();
         }
     }
-    void c_graphic_batch::erase(index_t index)
+    void c_graphic_batch_textured::erase(index_t index)
     {
         if (index < m_vec.size())
         {
@@ -52,7 +58,7 @@ namespace owd
             m_should_update = true;
         }
     }
-    void c_graphic_batch::update()
+    void c_graphic_batch_textured::update()
     {
         if (m_vec.empty())
         {
@@ -87,8 +93,9 @@ namespace owd
                 for (index_t i = 0; i != m_vec.size(); ++i)
                 {
                     m_vec[i]->m_index_in_batch = i;
+                    auto vertices_ = m_vec[i]->vertices();
                     m_vertices_buffer.insert
-                    (m_vertices_buffer.end(), m_vec[i]->vertices().begin(), m_vec[i]->vertices().end());
+                    (m_vertices_buffer.end(), vertices_.begin(), vertices_.end());
                     if (m_indices_buffer.empty())
                     {
                     }

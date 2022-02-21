@@ -1,11 +1,11 @@
 #include "audio/c_sound_engine.h"
 #include "graphics/c_graphic_engine.h"
-#include "draughts/c_draughts.h"
+//#include "draughts/c_draughts.h"
 
 auto static sound_engine   = owd::c_sound_engine  ::get_instance();
 auto static graphic_engine = owd::c_graphic_engine::get_instance();
 
-auto static draughts = owd::c_draughts::get_instance();
+//auto static draughts = owd::c_draughts::get_instance();
 
 int main()
 {

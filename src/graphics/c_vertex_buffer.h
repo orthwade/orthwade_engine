@@ -28,6 +28,8 @@ namespace owd
 		void set(const std::vector<float>& vertices);
 		void add(const std::vector<float>& vertices);
 
+		inline size_t count() { return m_vertex_positions_data->size() / sizeof(float); }
+
 		void bind();
 
 		void unbind();

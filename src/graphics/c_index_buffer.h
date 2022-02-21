@@ -34,6 +34,9 @@ namespace owd
 		void unbind();
 		inline std::vector<uint32_t>& indices() { return m_indices; }
 		inline size_t count() { return m_indices.size(); }
+
+		gl_index_t max_index();
+
 	private:
 		std::wstring m_name{ L"c_index_buffer_object" };
 

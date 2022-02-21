@@ -201,15 +201,24 @@ namespace owd
 		m_should_update = true;
 	}
 
-	gl_indices_t c_graphic_unit::indices_batch()
+	gl_indices_t c_graphic_unit::indices_batch(gl_index_t max_index)
 	{
 		gl_indices_t result = m_indices;
 		// 0, 1, 0, 2,  0, 3,  0, 1
 		// 4, 5, 4, 6,  4, 7,  4, 5
 		// 8, 9, 8, 10, 8, 11, 8, 9
+		gl_index_t increment = 0;
+		if (max_index == 0)
+		{
+			increment = 0;
+		}
+		else
+		{
+			increment = max_index + 1;
+		}
 		for (index_t i = 0; i != m_indices.size(); ++i)
 		{
-			result[i] += m_index_in_batch * (max_index() + 1);
+			result[i] += increment;
 		}
 
 		return result;

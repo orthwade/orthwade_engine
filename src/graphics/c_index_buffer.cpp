@@ -165,9 +165,16 @@ namespace owd
         }
         //m_mtx.unlock();
     }
-    std::vector<uint32_t> c_index_buffer::indices()
+    gl_index_t c_index_buffer::max_index()
     {
-        return m_indices;
+        if (m_indices.empty())
+        {
+            return 0;
+        }
+        else
+        {
+            return *std::max_element(m_indices.begin(), m_indices.end());
+        }
     }
 }
 
