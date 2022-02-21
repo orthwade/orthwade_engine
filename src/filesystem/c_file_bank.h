@@ -4,25 +4,25 @@
 
 namespace owd
 {
-	template <class T>
-	class c_file_bank : public c_object_bank<T>
-	{
-	public:
-		c_file_bank();
-		c_file_bank(std::wstring_view name);
+    template <class T>
+    class c_file_bank : public c_object_bank<T>
+    {
+    public:
+        c_file_bank();
+        c_file_bank(std::wstring_view name);
 
-		~c_file_bank();
+        ~c_file_bank();
 
-		bool load(std::wstring_view filepath);
-		bool load(std::wstring_view filepath, std::wstring_view name);
+        bool load(std::wstring_view filepath);
+        bool load(std::wstring_view filepath, std::wstring_view name);
 
-		std::shared_ptr<T>& by_filepath(std::wstring_view filepath);
+        std::shared_ptr<T>& by_filepath(std::wstring_view filepath);
 
-		void erase_by_filepath(std::wstring_view name);
+        void erase_by_filepath(std::wstring_view name);
 
-	protected:
+    protected:
 
-	};
+    };
 
     template<class T>
     c_file_bank<T>::c_file_bank()
@@ -60,14 +60,14 @@ namespace owd
             {
                 for (uint64_t i = 0; i != this->m_vec_objects.size(); ++i)
                 {
-                    if (this->m_vec_objects[i]->filepath() == filepath)
+                    if (strings_are_equal(this->m_vec_objects[i]->filepath(), filepath))
                     {
                         this->m_logger << "The filepath is already in the bank\n";
                         this->m_logger << "Loading ABORTED\n";
 
                         return false;
                     }
-                    if (this->m_vec_objects[i]->name() == name)
+                    if (strings_are_equal(this->m_vec_objects[i]->name(), name))
                     {
                         this->m_logger << "The name is already in the bank\n";
                         this->m_logger << "Loading ABORTED\n";
@@ -109,10 +109,9 @@ namespace owd
             else
             {
                 bool found = false;
-
                 for (uint64_t i = 0; i != this->m_vec_objects.size(); ++i)
                 {
-                    if (this->m_vec_objects[i]->filepath() == filepath)
+                    if (strings_are_equal(this->m_vec_objects[i]->filepath(), filepath))
                     {
                         file = this->m_vec_objects[i];
                         found = true;
@@ -151,7 +150,7 @@ namespace owd
 
                 for (uint64_t i = 0; i != this->m_vec_objects.size(); ++i, ++index)
                 {
-                    if (this->m_vec_objects[i]->filepath() == filepath)
+                    if (strings_are_equal(this->m_vec_objects[i]->filepath(), filepath))
                     {
                         found = true;
                         break;

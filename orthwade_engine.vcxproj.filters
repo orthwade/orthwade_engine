@@ -54,12 +54,6 @@
     <ClCompile Include="src\audio\c_sound_source_bank.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\audio\c_stereo_song.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\audio\errors.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\debug\imgui\c_test_imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -118,9 +112,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\graphics\rect\c_batches.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graphics\rect\c_graphic_unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\graphics\rect\c_single_coloured_rect.cpp">
@@ -252,6 +243,9 @@
     <ClCompile Include="src\graphics\batches\c_graphic_batch_textured.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\strings\compare_strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\audio\ogg\codec.h">
@@ -324,12 +318,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\audio\c_sound_source_bank.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\audio\c_stereo_song.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\audio\errors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\debug\imgui\c_test_imgui.h">
@@ -717,9 +705,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\rect\c_batches.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\graphics\rect\c_graphic_unit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\rect\c_single_coloured_rect.h">
@@ -1695,6 +1680,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\batches\c_graphic_batch_textured.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\strings\compare_strings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

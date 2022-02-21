@@ -158,8 +158,6 @@
     <ClCompile Include="src\audio\c_sound_file.cpp" />
     <ClCompile Include="src\audio\c_sound_source.cpp" />
     <ClCompile Include="src\audio\c_sound_source_bank.cpp" />
-    <ClCompile Include="src\audio\c_stereo_song.cpp" />
-    <ClCompile Include="src\audio\errors.cpp" />
     <ClCompile Include="src\audio\ogg\ogg_.cpp" />
     <ClCompile Include="src\debug\imgui\c_test_imgui.cpp" />
     <ClCompile Include="src\debug\imgui\imgui.cpp" />
@@ -221,7 +219,6 @@
     <ClCompile Include="src\graphics\rect\c_batch_coloured_figure.cpp" />
     <ClCompile Include="src\graphics\rect\c_batch_coloured_rect.cpp" />
     <ClCompile Include="src\graphics\rect\c_batch_textured_rect.cpp" />
-    <ClCompile Include="src\graphics\rect\c_graphic_unit.cpp" />
     <ClCompile Include="src\graphics\rect\c_single_coloured_rect.cpp" />
     <ClCompile Include="src\graphics\rect\c_single_textured_rect.cpp" />
     <ClCompile Include="src\graphics\stb_image\stb_image.cpp" />
@@ -244,6 +241,7 @@
     <ClCompile Include="src\misc\sleep_for\c_sleep_for.cpp" />
     <ClCompile Include="src\misc\text_file_to_string.cpp" />
     <ClCompile Include="src\misc\time\time_date.cpp" />
+    <ClCompile Include="src\strings\compare_strings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\audio\c_listener.h" />
@@ -257,8 +255,6 @@
     <ClInclude Include="src\audio\c_sound_file.h" />
     <ClInclude Include="src\audio\c_sound_source.h" />
     <ClInclude Include="src\audio\c_sound_source_bank.h" />
-    <ClInclude Include="src\audio\c_stereo_song.h" />
-    <ClInclude Include="src\audio\errors.h" />
     <ClInclude Include="src\audio\ogg\codec.h" />
     <ClInclude Include="src\audio\ogg\config_types.h" />
     <ClInclude Include="src\audio\ogg\ogg.h" />
@@ -441,7 +437,6 @@
     <ClInclude Include="src\graphics\rect\c_batch_coloured_figure.h" />
     <ClInclude Include="src\graphics\rect\c_batch_coloured_rect.h" />
     <ClInclude Include="src\graphics\rect\c_batch_textured_rect.h" />
-    <ClInclude Include="src\graphics\rect\c_graphic_unit.h" />
     <ClInclude Include="src\graphics\rect\c_single_coloured_rect.h" />
     <ClInclude Include="src\graphics\rect\c_single_textured_rect.h" />
     <ClInclude Include="src\graphics\stb_image\stb_image.h" />
@@ -745,6 +740,7 @@
     <ClInclude Include="src\misc\sleep_for\c_sleep_for.h" />
     <ClInclude Include="src\misc\text_file_to_string.h" />
     <ClInclude Include="src\misc\time\time_date.h" />
+    <ClInclude Include="src\strings\compare_strings.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\math\glm\detail\func_common.inl" />
