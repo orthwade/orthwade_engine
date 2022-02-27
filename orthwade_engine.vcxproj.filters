@@ -246,6 +246,15 @@
     <ClCompile Include="src\strings\compare_strings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\input\c_input_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\debug\c_oal_debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\debug\c_ogl_debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\audio\ogg\codec.h">
@@ -351,12 +360,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\debug\logger\logger.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\debug\oal_debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\debug\ogl_debug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\filesystem\c_file.h">
@@ -1683,6 +1686,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\strings\compare_strings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\c_input_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\debug\c_oal_debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\debug\c_ogl_debug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

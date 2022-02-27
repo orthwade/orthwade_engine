@@ -1,5 +1,5 @@
 #pragma once
-//#include "../debug/ogl_debug.h"
+//#include "../debug/c_ogl_debug.h"
 #include "../misc/c_basic_object.h"
 #include "filestream.h"
 #include "../strings/compare_strings.h"

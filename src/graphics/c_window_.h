@@ -1,6 +1,6 @@
 //#pragma once
 //#include <stdint.h>
-//#include "../debug/ogl_debug.h"
+//#include "../debug/c_ogl_debug.h"
 //#include "opengl/opengl.h"
 //#include "../misc/c_cycle_thread.h"
 //#include <shared_mutex>

@@ -1,5 +1,5 @@
 #pragma once
-#include "../debug/ogl_debug.h"
+#include "../debug/c_ogl_debug.h"
 #include <unordered_map>
 
 namespace owd

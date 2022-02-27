@@ -159,6 +159,8 @@
     <ClCompile Include="src\audio\c_sound_source.cpp" />
     <ClCompile Include="src\audio\c_sound_source_bank.cpp" />
     <ClCompile Include="src\audio\ogg\ogg_.cpp" />
+    <ClCompile Include="src\debug\c_oal_debug.cpp" />
+    <ClCompile Include="src\debug\c_ogl_debug.cpp" />
     <ClCompile Include="src\debug\imgui\c_test_imgui.cpp" />
     <ClCompile Include="src\debug\imgui\imgui.cpp" />
     <ClCompile Include="src\debug\imgui\imgui_demo.cpp" />
@@ -222,6 +224,10 @@
     <ClCompile Include="src\graphics\rect\c_single_coloured_rect.cpp" />
     <ClCompile Include="src\graphics\rect\c_single_textured_rect.cpp" />
     <ClCompile Include="src\graphics\stb_image\stb_image.cpp" />
+    <ClCompile Include="src\input\c_input_manager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\math\geometry\c_geom_circle.cpp" />
     <ClCompile Include="src\math\geometry\c_geom_figure.cpp" />
@@ -268,6 +274,8 @@
     <ClInclude Include="src\audio\openal\efx-presets.h" />
     <ClInclude Include="src\audio\openal\efx.h" />
     <ClInclude Include="src\audio\openal\openal.h" />
+    <ClInclude Include="src\debug\c_oal_debug.h" />
+    <ClInclude Include="src\debug\c_ogl_debug.h" />
     <ClInclude Include="src\debug\imgui\c_test_imgui.h" />
     <ClInclude Include="src\debug\imgui\imconfig.h" />
     <ClInclude Include="src\debug\imgui\imgui.h" />
@@ -279,8 +287,6 @@
     <ClInclude Include="src\debug\imgui\imstb_textedit.h" />
     <ClInclude Include="src\debug\imgui\imstb_truetype.h" />
     <ClInclude Include="src\debug\logger\logger.h" />
-    <ClInclude Include="src\debug\oal_debug.h" />
-    <ClInclude Include="src\debug\ogl_debug.h" />
     <ClInclude Include="src\filesystem\c_file.h" />
     <ClInclude Include="src\filesystem\c_files_in_directory.h" />
     <ClInclude Include="src\filesystem\c_file_bank.h" />
@@ -440,6 +446,10 @@
     <ClInclude Include="src\graphics\rect\c_single_coloured_rect.h" />
     <ClInclude Include="src\graphics\rect\c_single_textured_rect.h" />
     <ClInclude Include="src\graphics\stb_image\stb_image.h" />
+    <ClInclude Include="src\input\c_input_manager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="src\math\geometry\c_geom_circle.h" />
     <ClInclude Include="src\math\geometry\c_geom_figure.h" />
     <ClInclude Include="src\math\geometry\c_geom_triangle.h" />

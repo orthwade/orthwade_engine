@@ -1,6 +1,6 @@
 #pragma once
 #include <functional>
-#include "../ogl_debug.h"
+#include "../c_ogl_debug.h"
 
 
 // Dear ImGui: standalone example application for GLFW + OpenGL 3, using programmable pipeline

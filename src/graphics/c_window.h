@@ -3,7 +3,7 @@
 #include <mutex>
 #include "../misc/sleep_for/c_sleep_for.h"
 #include "../misc/c_basic_object.h"
-#include "../debug/ogl_debug.h"
+#include "../debug/c_ogl_debug.h"
 #include "../misc/c_async_timer.h"
 
 namespace owd

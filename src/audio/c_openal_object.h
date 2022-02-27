@@ -1,5 +1,5 @@
 #pragma once
-#include "../debug/oal_debug.h"
+#include "../debug/c_oal_debug.h"
 #include "../misc/c_basic_object.h"
 
 namespace owd

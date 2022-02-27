@@ -1,21 +1,33 @@
-#pragma once
-#include "logger/logger.h"
-#include "../graphics/opengl/opengl.h"
-
-//static std::mutex gl_call_mtx{};
-
-#define GL_CALL(x) \
-gl_clear_error(); \
-x;\
-ASSERT(gl_log_call())
+#include "c_ogl_debug.h"
 
 namespace owd
 {
-	static c_logger gl_logger{ L"gl_logger" };
-	static std::wstring gl_error_str{};
-	static std::wstring_view error_view(GLenum error_code)
+	c_ogl_debug* c_ogl_debug::m_singleton = nullptr;
+	
+	c_ogl_debug* owd::c_ogl_debug::get_instance()
 	{
-		std::wstring result{};
+		if (m_singleton == nullptr)
+		{
+			m_singleton = new c_ogl_debug();
+		}
+
+		return m_singleton;
+	}
+	
+	void c_ogl_debug::terminate()
+	{
+		if (m_singleton == nullptr)
+		{
+
+		}
+		else
+		{
+			delete m_singleton;
+			m_singleton = nullptr;
+		}
+	}
+	std::wstring_view c_ogl_debug::error_view(GLenum error_code)
+	{
 		switch (error_code)
 		{
 		case	GL_INVALID_ENUM:
@@ -35,12 +47,6 @@ namespace owd
 				L"[GL_INVALID_OPERATION] The specified operation is not allowed in the current state.\n"
 				"The offending function is ignored, having no side effect other than to set the error flag.\n";
 			break;
-
-			//case	GL_NO_ERROR 			:
-			//	gl_error_str =
-			//		L"[GL_NO_ERROR] No error has been recorded.\n"
-			//		"The value of this symbolic constant is guaranteed to be zero.\n";
-			//	break;
 
 		case	GL_STACK_OVERFLOW:
 			gl_error_str =
@@ -67,39 +73,38 @@ namespace owd
 		}
 		return gl_error_str;
 	}
-	static void gl_clear_error()
+	void c_ogl_debug::gl_clear_error()
 	{
-		//gl_call_mtx.lock();
 		GLenum error{};
 		while ((error = glGetError()) != GL_NO_ERROR)
 		{
-			gl_error_str = error_view(error);
 			if (error != GL_NO_ERROR)
 			{
-				gl_logger << L"----Opengl CLEAR ERRORS: ERROR_CODE: " << gl_error_str << '\n';
+				gl_logger << L"----OpenGL CLEAR ERRORS: ERROR_CODE:\n" << error_view(error) << '\n';
 			}
 			else
 			{
-				gl_logger << L"----Opengl CLEAR ERRORS: NO ERROR\n";
+				gl_logger << L"----OpenGL CLEAR ERRORS: NO ERROR\n";
 			}
 		}
-		//gl_call_mtx.unlock();
 	}
-	static bool gl_log_call()
+	bool c_ogl_debug::gl_log_call()
 	{
-		//gl_call_mtx.lock();
 		while (GLenum error = glGetError())
 		{
-			gl_error_str = error_view(error);
 			if (error != GL_NO_ERROR)
 			{
-				gl_logger << L"----Opengl call ERROR: " << gl_error_str << '\n';
-				//gl_call_mtx.unlock();
+				gl_logger << L"----OpenGL call ERROR:\n" << error_view(error) << '\n';
 				return false;
 			}
 		}
-		gl_logger << L"----Opengl call SUCCESS\n";
-		//gl_call_mtx.unlock();
+		gl_logger << L"----OpenGL call SUCCESS\n";
 		return true;
 	}
+    c_ogl_debug::c_ogl_debug()
+    {
+    }
+    c_ogl_debug::~c_ogl_debug()
+    {
+    }
 }

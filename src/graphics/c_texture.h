@@ -1,6 +1,6 @@
 #pragma once
 #include "stb_image/stb_image.h"
-#include "../debug/ogl_debug.h"
+#include "../debug/c_ogl_debug.h"
 #include "../filesystem/c_file.h"
 
 namespace owd
