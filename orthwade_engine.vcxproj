@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -224,11 +224,11 @@
     <ClCompile Include="src\graphics\rect\c_single_coloured_rect.cpp" />
     <ClCompile Include="src\graphics\rect\c_single_textured_rect.cpp" />
     <ClCompile Include="src\graphics\stb_image\stb_image.cpp" />
+    <ClCompile Include="src\include\graphics_include\graphics_include.cpp" />
     <ClCompile Include="src\input\c_input_manager.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\math\geometry\c_geom_circle.cpp" />
     <ClCompile Include="src\math\geometry\c_geom_figure.cpp" />
     <ClCompile Include="src\math\geometry\c_geom_triangle.cpp" />

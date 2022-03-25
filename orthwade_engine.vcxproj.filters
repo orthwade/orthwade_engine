@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\audio\ogg\ogg_.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -253,6 +250,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\debug\c_ogl_debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\include\graphics_include\graphics_include.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

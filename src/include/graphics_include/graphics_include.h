@@ -6,26 +6,15 @@ namespace owd
 	/// <summary>
 	/// Create window.
 	/// </summary>
-	void init()
-	{
-		auto graphic_engine = c_graphic_engine::get_instance();
-	}
+	void init();
 
-
-	void run()
-	{
-		auto graphic_engine = c_graphic_engine::get_instance();
-		graphic_engine->run();
-	}
+	void run();
 
 	/// <summary>
 	/// Close window.
 	/// </summary>
-	void terminate()
-	{
-		auto graphic_engine = c_graphic_engine::get_instance();
-		graphic_engine->terminate();
-	}
+	void terminate();
+
 	/// <summary>
 	/// Add coloured rectangle and get its index.
 	/// </summary>
@@ -40,12 +29,7 @@ namespace owd
 	/// <param name="level"></param>
 	/// <returns></returns>
 	index_t add_graphic_unit(float centre_x, float centre_y, float width, float height,
-		float red, float green, float blue, float alpha, uint16_t level)
-	{
-		auto graphic_engine = c_graphic_engine::get_instance();
-		auto& batch_handler = graphic_engine->get_batch_handler();
-		return batch_handler.add_rect(centre_x, centre_y, width, height, red, green, blue, alpha, level);
-	}
+		float red, float green, float blue, float alpha, uint16_t level);
 
 	/// <summary>
 	/// Add coloured circle and get its index.
@@ -78,13 +62,7 @@ namespace owd
 	/// <param name="level"></param>
 	/// <returns></returns>
 	index_t add_graphic_unit(float centre_x, float centre_y, float width, float height,
-		std::wstring_view texture_filepath, uint16_t level)
-	{
-		auto& graphic_engine = *c_graphic_engine::get_instance();
-		auto texture = graphic_engine.load_and_get_texture(texture_filepath);
-		auto& batch_handler = graphic_engine.get_batch_handler();
-		return batch_handler.add_textured(centre_x, centre_y, width, height, texture, level);
-	}
+		std::wstring_view texture_filepath, uint16_t level);
 
 	/// <summary>
 	/// Moves centre of graphic unit with index = unit_index to position [centre_x, centre_y].
@@ -92,30 +70,20 @@ namespace owd
 	/// <param name="unit_index"></param>
 	/// <param name="centre_x"></param>
 	/// <param name="centre_y"></param>
-	void set_graphic_unit_position(index_t unit_index, float centre_x, float centre_y)
-	{
-		c_graphic_engine::get_instance()->get_batch_handler().get_unit_by_index(unit_index)->
-			set_position(centre_x, centre_y);
-	}
+	void set_graphic_unit_position(index_t unit_index, float centre_x, float centre_y);
+
 	/// <summary>
-	/// Moves centre of textured graphic unit with index = unit_index to position [centre_x, centre_y].
+	/// Move centre of textured graphic unit with index = unit_index to position [centre_x, centre_y].
 	/// </summary>
 	/// <param name="unit_index"></param>
 	/// <param name="centre_x"></param>
 	/// <param name="centre_y"></param>
-	void set_textured_graphic_unit_position(index_t unit_index, float centre_x, float centre_y)
-	{
-		c_graphic_engine::get_instance()->get_batch_handler().get_textured_unit_by_index(unit_index)->
-			set_position(centre_x, centre_y);
-	}
+	void set_textured_graphic_unit_position(index_t unit_index, float centre_x, float centre_y);
 
 	/// <summary>
 	/// Delete graphic unit with index = unit_index.
 	/// </summary>
 	/// <param name="unit_index"></param>
-	void delete_graphic_unit(index_t unit_index)
-	{
-		c_graphic_engine::get_instance()->get_batch_handler().delete_by_index(unit_index);
-	}
+	void delete_graphic_unit(index_t unit_index);
 
 }
