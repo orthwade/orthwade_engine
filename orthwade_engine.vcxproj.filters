@@ -1697,6 +1697,9 @@
     <ClInclude Include="src\debug\c_ogl_debug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\graphics_include\graphics_include.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\math\glm\detail\func_common.inl">

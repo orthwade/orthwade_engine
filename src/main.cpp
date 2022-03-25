@@ -1,23 +1,16 @@
-#include "audio/c_sound_engine.h"
-#include "graphics/c_graphic_engine.h"
-//#include "draughts/c_draughts.h"
+#include "include/graphics_include/graphics_include.h"
 
-auto static sound_engine   = owd::c_sound_engine  ::get_instance();
-auto static graphic_engine = owd::c_graphic_engine::get_instance();
-
-//auto static draughts = owd::c_draughts::get_instance();
 
 int main()
 {
-	graphic_engine->enable_imgui(true);
+	owd::init();
 
-	//auto& textured_objects = graphic_engine->get_batches_textured_rects();
-	//graphic_engine->texture_by_filepath(L"rsc/textures")
-	//auto& textu
-	//textured_objects.add(0.0f, 0.0f, 0.5f, 0.5f, )
-	
-	graphic_engine->run();
-	graphic_engine->terminate();
-	sound_engine->terminate();
+	owd::add_graphic_unit(0.5f, 0.1f, 0.15f, 0.9f, 0.2f, 0.3f, 0.5f, 1.0f, 1);
+	auto textured_unit_1 = owd::add_graphic_unit(0.0f, 0.0f, 0.1f, 0.1f, L"rsc/textures/e_green.png", 2);
+	owd::set_textured_graphic_unit_position(textured_unit_1, -0.5f, 0.0f);
+	owd::delete_graphic_unit(textured_unit_1);
+	owd::run();
+
+
 	return 0;
 }

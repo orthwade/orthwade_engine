@@ -130,13 +130,13 @@ namespace owd
 			m_circles.add(-0.5f, -0.7f, 0.15f, 0.4f, 0.4f, 0.5f, 1.0f);
 			m_circles.add(0.5f, 0.1f, 0.15f, 0.4f, 0.9f, 0.5f, 1.0f);
 			m_rects.add(0.5f, 0.1f, 0.15f, 0.9f, 0.2f, 0.3f, 0.5f, 1.0f);*/
-			add_rect(0.5f, 0.1f, 0.15f, 0.9f, 0.2f, 0.3f, 0.5f, 1.0f, 1);
-			add_rect(-0.5f, 0.1f, 0.25f, 0.9f, 0.3f, 0.3f, 0.5f, 1.0f, 0);
-
-			add_circle(0.5f, 0.0f, 0.15f, 0.4f, 0.9f, 0.5f, 1.0f, 0);
-			add_rect(0.0f, 0.5f, 0.3f, 0.3f, 0.9f, 0.3f, 0.5f, 1.0f, 0);
-			load_texture(L"rsc/textures/e_green.png");
-			add_textured(0.5f, 0.0f, 0.7f, 0.7f, m_texture_bank.last(), 2);
+			//add_rect(0.5f, 0.1f, 0.15f, 0.9f, 0.2f, 0.3f, 0.5f, 1.0f, 1);
+			//add_rect(-0.5f, 0.1f, 0.25f, 0.9f, 0.3f, 0.3f, 0.5f, 1.0f, 0);
+			//
+			//add_circle(0.5f, 0.0f, 0.15f, 0.4f, 0.9f, 0.5f, 1.0f, 0);
+			//add_rect(0.0f, 0.5f, 0.3f, 0.3f, 0.9f, 0.3f, 0.5f, 1.0f, 0);
+			//load_texture(L"rsc/textures/e_green.png");
+			//add_textured(0.5f, 0.0f, 0.7f, 0.7f, m_texture_bank.last(), 2);
 
 
 

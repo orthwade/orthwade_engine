@@ -18,7 +18,7 @@ namespace owd
 		c_logger al_logger{ L"al_logger" };
 		std::wstring al_error_str{};
 
-		static c_oal_debug* m_sinaleton;
+		static c_oal_debug* m_singleton;
 
 		c_oal_debug();
 		~c_oal_debug();

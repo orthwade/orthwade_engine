@@ -19,6 +19,7 @@ namespace owd
 		inline size_t vertices_count() { return m_vertex_buffer.count(); }
 		inline static g_unit_t& empty_unit() { return c_graphic_unit::empty_unit(); }
 		g_unit_t& get_unit(index_t index);
+		g_unit_t& get_last_unit();
 
 		inline std::vector<g_unit_t>& get_vec() { return m_vec; }
 

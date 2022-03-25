@@ -35,7 +35,7 @@ namespace owd
 		//void set(float centre_x, float centre_y,
 		//	float red, float green, float blue, float alpha);
 
-		//void set_position(float centre_x, float centre_y);
+		void set_position(float centre_x, float centre_y);
 
 		//void resize(float size_multiplier);
 
@@ -64,6 +64,9 @@ namespace owd
 
 		inline uint16_t level() { return m_level; }
 
+		inline index_t global_index() { return m_global_index; }
+		inline void set_global_index(index_t index) { m_global_index = index; }
+
 		static std::shared_ptr<c_graphic_unit_textured>& empty_unit();
 		static xy_t centre(const vertices_t & vertex_positions);
 
@@ -75,6 +78,8 @@ namespace owd
 		static size_t m_max_units_in_one_batch;
 
 		static std::shared_ptr<c_graphic_unit_textured> m_empty_unit;
+
+		index_t m_global_index = 0;
 
 		uint16_t m_level = 0;
 

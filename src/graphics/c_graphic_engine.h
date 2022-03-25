@@ -127,6 +127,11 @@ namespace owd
 			return m_texture_bank.load(filepath);
 		}
 
+		inline texture_t& load_and_get_texture(std::wstring_view filepath)
+		{
+			return m_texture_bank.load_and_get(filepath);
+		}
+
 		/// <summary>
 		/// Load texture to texture bank and specify its name.
 		/// </summary>
@@ -207,6 +212,8 @@ namespace owd
 		/// </summary>
 		/// <returns></returns>
 		//inline c_batches_textured& get_batches_textured_rects() { return m_rects_textured; }
+
+		inline c_batch_handler& get_batch_handler() { return m_batch_handler; }
 
 	protected:
 		static std::pair<int32_t, uint32_t> init_opengl();

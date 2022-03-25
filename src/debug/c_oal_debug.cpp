@@ -2,28 +2,28 @@
 
 namespace owd
 {
-	c_oal_debug* c_oal_debug::m_sinaleton = nullptr;
+	c_oal_debug* c_oal_debug::m_singleton = nullptr;
 
 	c_oal_debug* owd::c_oal_debug::get_instance()
 	{
-		if (m_sinaleton == nullptr)
+		if (m_singleton == nullptr)
 		{
-			m_sinaleton = new c_oal_debug();
+			m_singleton = new c_oal_debug();
 		}
 
-		return m_sinaleton;
+		return m_singleton;
 	}
 
 	void c_oal_debug::terminate()
 	{
-		if (m_sinaleton == nullptr)
+		if (m_singleton == nullptr)
 		{
 
 		}
 		else
 		{
-			delete m_sinaleton;
-			m_sinaleton = nullptr;
+			delete m_singleton;
+			m_singleton = nullptr;
 		}
 	}
 	std::wstring_view c_oal_debug::error_view(ALenum error_code)

@@ -79,7 +79,7 @@ namespace owd
         }
         return m_levels[level];
     }
-    void c_batch_handler::add(g_unit_t& unit)
+    index_t c_batch_handler::add(g_unit_t& unit)
     {
         auto& level = get_level(unit->level());
         auto& batches_ = level.batches;
@@ -94,8 +94,11 @@ namespace owd
             batch_ = batches_.back();
         }
         batch_->add(unit);
+        ++m_last_index;
+        batch_->get_last_unit()->set_global_index(m_last_index);
+        return m_last_index;
     }
-    void c_batch_handler::add(g_unit_textured_t& unit)
+    index_t c_batch_handler::add(g_unit_textured_t& unit)
     {
         auto& level = get_level(unit->level());
         auto& batches_ = level.batches_textured;
@@ -110,8 +113,11 @@ namespace owd
             batch_ = batches_.back();
         }
         batch_->add(unit);
+        ++m_last_index;
+        batch_->get_last_unit()->set_global_index(m_last_index);
+        return m_last_index;
     }
-    void c_batch_handler::add_rect(float centre_x, float centre_y, float width, float height, 
+    index_t c_batch_handler::add_rect(float centre_x, float centre_y, float width, float height,
         float red, float green, float blue, float alpha, uint16_t level)
     {
         vertices_t positions =
@@ -124,9 +130,9 @@ namespace owd
         gl_indices_t indices = { 0, 1, 2, 2, 3, 0 };
 
         auto rect = std::make_shared<c_graphic_unit>(positions, indices, red, green, blue, alpha, level);
-        add(rect);
+        return add(rect);
     }
-    void c_batch_handler::add_circle(float centre_x, float centre_y, float radius, 
+    index_t c_batch_handler::add_circle(float centre_x, float centre_y, float radius,
         float red, float green, float blue, float alpha, uint16_t level)
     {
         vertices_t positions{};
@@ -155,13 +161,75 @@ namespace owd
         indices.back() = 1;
 
         auto circle = std::make_shared<c_graphic_unit>(positions, indices, red, green, blue, alpha, level);
-        add(circle);
+        return add(circle);
     }
-    void c_batch_handler::add_textured(float centre_x, float centre_y, float width, float height, 
+    index_t c_batch_handler::add_textured(float centre_x, float centre_y, float width, float height,
         texture_t& texture, uint16_t level)
     {
         auto rect = std::make_shared<c_graphic_unit_textured>(centre_x, centre_y, width, height, texture, level);
-        add(rect);
+        return add(rect);
+    }
+    void c_batch_handler::delete_by_index(index_t index)
+    {
+        for (auto& level : m_levels)
+        {
+            for (auto& batch : level.batches)
+            {
+                for (auto& unit : batch->get_vec())
+                {
+                    if (unit->global_index() == index)
+                    {
+                        unit->set_to_delete();
+                        return;
+                    }
+                }
+            }
+            for (auto& batch : level.batches_textured)
+            {
+                for (auto& unit : batch->get_vec())
+                {
+                    if (unit->global_index() == index)
+                    {
+                        unit->set_to_delete();
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    g_unit_t& c_batch_handler::get_unit_by_index(index_t index)
+    {
+        for (auto& level : m_levels)
+        {
+            for (auto& batch : level.batches)
+            {
+                for (auto& unit : batch->get_vec())
+                {
+                    if (unit->global_index() == index)
+                    {
+                        return unit;
+                    }
+                }
+            }
+        }
+        return c_graphic_unit::empty_unit();
+    }
+    g_unit_textured_t& c_batch_handler::get_textured_unit_by_index(index_t index)
+    {
+        for (auto& level : m_levels)
+        {
+            for (auto& batch : level.batches_textured)
+            {
+                for (auto& unit : batch->get_vec())
+                {
+                    if (unit->global_index() == index)
+                    {
+                        return unit;
+                    }
+                }
+            }
+        }
+        return c_graphic_unit_textured::empty_unit();
     }
     void c_batch_handler::clear()
     {

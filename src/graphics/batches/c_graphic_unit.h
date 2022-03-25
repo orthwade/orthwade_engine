@@ -73,6 +73,8 @@ namespace owd
 
 		inline uint16_t level() { return m_level; }
 
+		inline index_t global_index() { return m_global_index; }
+		inline void set_global_index(index_t index) { m_global_index = index; }
 		static std::shared_ptr<c_graphic_unit>& empty_unit();
 		static xy_t centre(const vertices_t& vertex_positions);
 
@@ -83,6 +85,7 @@ namespace owd
 
 		static std::shared_ptr<c_graphic_unit> m_empty_unit;
 
+		index_t m_global_index = 0;
 		uint16_t m_level = 0;
 
 		vertices_t   m_vertex_positions{};

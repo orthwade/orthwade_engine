@@ -42,6 +42,17 @@ namespace owd
             return empty_unit();
         }
     }
+    g_unit_t& c_graphic_batch::get_last_unit()
+    {
+        if (!m_vec.empty())
+        {
+            return m_vec.back();
+        }
+        else
+        {
+            return empty_unit();
+        }
+    }
     void c_graphic_batch::erase(index_t index)
     {
         if (index < m_vec.size())
@@ -71,7 +82,7 @@ namespace owd
             if (this->m_should_update)
             {
                 // Deleting if set to delete
-                for (index_t i = 0; i != m_vec.size(); ++i)
+                for (index_t i = 0; i < m_vec.size(); ++i)
                 {
                     if (m_vec[i]->deleted())
                     {

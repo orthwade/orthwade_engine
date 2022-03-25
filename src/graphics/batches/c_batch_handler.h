@@ -16,17 +16,22 @@ namespace owd
 	{
 	public:
 		s_level& get_level(uint16_t level);
-		void add(g_unit_t& unit);
-		void add(g_unit_textured_t& unit);
+		index_t add(g_unit_t& unit);
+		index_t add(g_unit_textured_t& unit);
 
-		void add_rect(float centre_x, float centre_y, float width, float height,
+		index_t add_rect(float centre_x, float centre_y, float width, float height,
 			float red, float green, float blue, float alpha, uint16_t level);
 
-		void add_circle(float centre_x, float centre_y, float radius,
+		index_t add_circle(float centre_x, float centre_y, float radius,
 			float red, float green, float blue, float alpha, uint16_t level);
 
-		void add_textured(float centre_x, float centre_y, float width, float height,
+		index_t add_textured(float centre_x, float centre_y, float width, float height,
 			texture_t& texture, uint16_t level);
+
+		void delete_by_index(index_t index);
+
+		g_unit_t& get_unit_by_index(index_t index);
+		g_unit_textured_t& get_textured_unit_by_index(index_t index);
 
 		void clear();
 		void draw();
@@ -35,6 +40,7 @@ namespace owd
 		static void terminate();
 
 	private:
+		index_t m_last_index = 0;
 		GLint m_max_vertices{};
 		GLint m_max_indices{};
 

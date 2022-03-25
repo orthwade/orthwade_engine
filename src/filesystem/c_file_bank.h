@@ -16,6 +16,8 @@ namespace owd
         bool load(std::wstring_view filepath);
         bool load(std::wstring_view filepath, std::wstring_view name);
 
+        std::shared_ptr<T>& load_and_get(std::wstring_view filepath);
+
         std::shared_ptr<T>& by_filepath(std::wstring_view filepath);
 
         void erase_by_filepath(std::wstring_view name);
@@ -92,6 +94,46 @@ namespace owd
         this->m_logger << "----Loading file END----\n";
 
         return result;
+    }
+
+    template<class T>
+    std::shared_ptr<T>& c_file_bank<T>::load_and_get(std::wstring_view filepath)
+    {
+        auto file = std::make_shared<T>();
+        this->m_logger << "----Loading file; filepath: " << filepath << "----\n";
+        {
+            if (this->m_vec_objects.empty())
+            {
+
+            }
+            else
+            {
+                for (uint64_t i = 0; i != this->m_vec_objects.size(); ++i)
+                {
+                    if (strings_are_equal(this->m_vec_objects[i]->filepath(), filepath))
+                    {
+                        this->m_logger << "The filepath is already in the bank\n";
+                        this->m_logger << "Loading ABORTED\n";
+
+                        return this->m_vec_objects[i];
+                    }
+                }
+            }
+
+            if (file->load(filepath))
+            {
+                this->m_vec_objects.push_back(file);
+                this->m_logger << "Loading SUCCESS\n";
+                return this->m_vec_objects.back();
+            }
+            else
+            {
+                this->m_logger << "Loading ERROR\n";
+            }
+        }
+        this->m_logger << "----Loading file END----\n";
+
+        return file;
     }
 
 

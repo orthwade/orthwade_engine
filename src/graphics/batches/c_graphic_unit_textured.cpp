@@ -32,6 +32,14 @@ namespace owd
 		
 	}
 
+	void c_graphic_unit_textured::set_position(float centre_x, float centre_y)
+	{
+		m_x = centre_x;
+		m_y = centre_y;
+		m_centre = { centre_x, centre_y };
+		m_should_update = true;
+	}
+
 	vertices_t c_graphic_unit_textured::vertices()
 	{
 			return
