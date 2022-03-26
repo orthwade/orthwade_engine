@@ -104,6 +104,7 @@ namespace owd_lib
                 for (index_t i = 0; i != m_vec.size(); ++i)
                 {
                     m_vec[i]->m_index_in_batch = i;
+                    m_vec[i]->m_index = i;
                     auto vertices_ = m_vec[i]->vertices();
                     m_vertices_buffer.insert
                     (m_vertices_buffer.end(), vertices_.begin(), vertices_.end());
