@@ -1,6 +1,6 @@
 #include "c_geom_circle.h"
 
-namespace owd
+namespace owd_lib
 {
     c_geom_circle::c_geom_circle()
         :c_geom_circle(0.0f, 0.0f, 0.1f)

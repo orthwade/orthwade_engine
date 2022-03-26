@@ -1,6 +1,6 @@
 #include "c_single_coloured_rect.h"
 
-namespace owd
+namespace owd_lib
 {
     c_single_coloured_rect::c_single_coloured_rect()
     {

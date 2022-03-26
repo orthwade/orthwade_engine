@@ -1,6 +1,6 @@
 #include "c_texture.h"
 
-namespace owd
+namespace owd_lib
 {
     static int32_t init_stbi = c_texture::init_stbi();
 

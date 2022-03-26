@@ -2,7 +2,7 @@
 #include "../debug/c_ogl_debug.h"
 #include "../misc/misc_defines.h"
 
-namespace owd
+namespace owd_lib
 {
 	typedef std::vector<float> vertices_t;
 	class c_vertex_buffer

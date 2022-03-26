@@ -4,7 +4,7 @@
 #include "filestream.h"
 #include "../strings/compare_strings.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_file : public c_basic_object
 	{

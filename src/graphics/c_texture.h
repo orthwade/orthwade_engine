@@ -3,7 +3,7 @@
 #include "../debug/c_ogl_debug.h"
 #include "../filesystem/c_file.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_texture : public c_file
 	{

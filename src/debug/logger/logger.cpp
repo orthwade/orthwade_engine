@@ -1,6 +1,6 @@
 #include "logger.h"
 
-namespace owd
+namespace owd_lib
 {
     static auto setmode_result = _setmode(_fileno(stdout), _O_WTEXT);
 
@@ -48,7 +48,7 @@ namespace owd
         std::filesystem::create_directory(std::wstring(L"output/logs/") + m_date_str);
     }
 
-    c_logger::c_logger(std::wstring_view name, owd::enm_log_mode mode)
+    c_logger::c_logger(std::wstring_view name, owd_lib::enm_log_mode mode)
         :
         m_name(name),
         //m_mode(mode),

@@ -1,6 +1,6 @@
 #include "c_geom_figure.h"
 
-namespace owd
+namespace owd_lib
 {
     c_geom_figure::c_geom_figure()
     {

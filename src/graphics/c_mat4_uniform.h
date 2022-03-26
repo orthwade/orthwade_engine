@@ -1,7 +1,7 @@
 #pragma once
 #include "c_glsl_uniform.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_mat4_uniform : public c_glsl_uniform
 	{

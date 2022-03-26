@@ -1,10 +1,10 @@
 #include "c_sound_source_bank.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_sound_source_bank* c_sound_source_bank::m_singleton = nullptr;
 	
-	c_sound_source_bank* owd::c_sound_source_bank::get_instance()
+	c_sound_source_bank* owd_lib::c_sound_source_bank::get_instance()
 	{
 		if (m_singleton == nullptr)
 		{

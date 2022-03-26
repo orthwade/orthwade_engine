@@ -1,6 +1,6 @@
 #include "c_glsl_uniform.h"
 
-namespace owd
+namespace owd_lib
 {
     c_glsl_uniform::c_glsl_uniform()
     {
@@ -29,7 +29,7 @@ namespace owd
         m_logger << "----Copy construction from [" << other.m_object_name << "] of [" << m_object_name << "] OK----\n";
     }
 
-    c_glsl_uniform& owd::c_glsl_uniform::operator=(const c_glsl_uniform& other)
+    c_glsl_uniform& owd_lib::c_glsl_uniform::operator=(const c_glsl_uniform& other)
     {
         m_logger << "----Assigning [" << other.m_object_name << "] to [" << m_object_name << "] START----\n";
         {

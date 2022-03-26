@@ -5,7 +5,7 @@
 #else
 #include <unistd.h>
 #endif
-namespace owd
+namespace owd_lib
 {
 	c_window* c_window::m_singleton = nullptr;
 	
@@ -138,7 +138,7 @@ namespace owd
 		//m_mtx.unlock();
 	}
 
-	c_window* owd::c_window::get_instance()
+	c_window* owd_lib::c_window::get_instance()
 	{
 		if (m_singleton == nullptr)
 		{

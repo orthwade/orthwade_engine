@@ -1,6 +1,6 @@
 #include "c_cycle_thread.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_cycle_thread::c_cycle_thread()
 	{

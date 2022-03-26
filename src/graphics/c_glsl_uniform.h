@@ -2,7 +2,7 @@
 #include "../debug/c_ogl_debug.h"
 #include <unordered_map>
 
-namespace owd
+namespace owd_lib
 {
 	class c_glsl_uniform
 	{

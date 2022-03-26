@@ -1,6 +1,6 @@
 #include "c_shader.h"
 
-namespace owd
+namespace owd_lib
 {
     c_shader::c_shader()
     {

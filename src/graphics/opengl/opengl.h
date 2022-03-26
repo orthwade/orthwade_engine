@@ -15,7 +15,7 @@
 
 #include "../../math/glm/glm.hpp"
 
-namespace owd
+namespace owd_lib
 {
 	typedef GLuint gl_index_t;
 	typedef std::vector<gl_index_t> gl_indices_t;

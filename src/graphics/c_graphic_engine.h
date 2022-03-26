@@ -12,7 +12,7 @@
 #include "rect/c_batch_coloured_circle.h"
 #include "batches/c_batch_handler.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_graphic_engine : public c_basic_object
 	{

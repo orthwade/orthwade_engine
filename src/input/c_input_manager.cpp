@@ -1,10 +1,10 @@
 #include "c_input_manager.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_input_manager* c_input_manager::m_singleton = nullptr;
 
-	c_input_manager* owd::c_input_manager::get_instance()
+	c_input_manager* owd_lib::c_input_manager::get_instance()
 	{
 		if (m_singleton == nullptr)
 		{
@@ -27,6 +27,7 @@ namespace owd
 	}
 	s_key& c_input_manager::get_key(int32_t key_code)
 	{
+		auto lock = std::lock_guard(m_mutex);
 		for (index_t i = 0; i != m_keys.size(); ++i)
 		{
 			if (m_keys[i].key == key_code)
@@ -50,6 +51,9 @@ namespace owd
 	{
 		auto input_manager = c_input_manager::get_instance();
 		auto& key_ = input_manager->get_key(key_code);
+		std::mutex mtx{};
+		auto lock = std::lock_guard(mtx);
+
 		key_.key = key_code;
 		if (action == GLFW_PRESS)
 		{
@@ -64,6 +68,8 @@ namespace owd
 	{
 		auto input_manager = c_input_manager::get_instance();
 		auto& key_ = input_manager->get_key(button);
+		std::mutex mtx{};
+		auto lock = std::lock_guard(mtx);
 		key_.key = button;
 		if (action == GLFW_PRESS)
 		{

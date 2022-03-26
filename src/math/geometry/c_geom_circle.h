@@ -1,7 +1,7 @@
 #pragma once
 #include "c_geom_figure.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_geom_circle : public c_geom_figure
 	{

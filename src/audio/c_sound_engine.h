@@ -3,7 +3,7 @@
 #include "c_sound_source_bank.h"
 #include "c_listener.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_sound_engine : public c_basic_object
 	{

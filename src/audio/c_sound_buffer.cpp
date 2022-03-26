@@ -1,7 +1,7 @@
 #include "c_sound_buffer.h"
 #include "../misc/sleep_for/c_sleep_for.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_sound_buffer::c_sound_buffer()
 	{

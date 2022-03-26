@@ -1,6 +1,6 @@
 #include "c_graphic_batch_textured.h"
 
-namespace owd
+namespace owd_lib
 {
     c_graphic_batch_textured::c_graphic_batch_textured()
         : c_graphic_batch_textured(0)

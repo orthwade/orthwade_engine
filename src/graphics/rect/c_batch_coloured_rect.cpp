@@ -1,6 +1,6 @@
 #include "c_batch_coloured_rect.h"
 
-namespace owd
+namespace owd_lib
 {
 	std::shared_ptr<c_coloured_rect> c_coloured_rect::m_empty_rect = std::shared_ptr<c_coloured_rect>();
 

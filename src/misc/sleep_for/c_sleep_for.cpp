@@ -1,5 +1,5 @@
 #include "c_sleep_for.h"
-namespace owd
+namespace owd_lib
 {
 	c_sleep_for_ms::c_sleep_for_ms()
 	{

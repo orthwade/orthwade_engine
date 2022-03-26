@@ -1,7 +1,7 @@
 #pragma once
 #include "../filesystem/c_file.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_sound_file : public c_file
 	{

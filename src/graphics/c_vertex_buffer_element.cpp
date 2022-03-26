@@ -1,6 +1,6 @@
 #include "c_vertex_buffer_element.h"
 
-namespace owd
+namespace owd_lib
 {
     c_vertex_buffer_element::c_vertex_buffer_element()
     {
@@ -23,7 +23,7 @@ namespace owd
         *this = other;
     }
 
-    c_vertex_buffer_element& owd::c_vertex_buffer_element::operator=(const c_vertex_buffer_element& other)
+    c_vertex_buffer_element& owd_lib::c_vertex_buffer_element::operator=(const c_vertex_buffer_element& other)
     {
         if (this != &other)
         {

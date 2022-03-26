@@ -34,7 +34,7 @@
 //#define OWD_LOGGER_MODE_OVERRIDE_BOTH 3
 //#endif // OWD_LOGGER_MODE_OVERRIDE
 
-namespace owd
+namespace owd_lib
 {
 	enum class enm_log_mode
 	{
@@ -56,7 +56,7 @@ namespace owd
 	public:
 		c_logger();
 		c_logger(std::wstring_view name);
-		c_logger(std::wstring_view name, owd::enm_log_mode mode);
+		c_logger(std::wstring_view name, owd_lib::enm_log_mode mode);
 
 		~c_logger();
 
@@ -108,7 +108,7 @@ namespace owd
 		std::wstring m_name{};
 		std::wstring m_line{};
 		
-		owd::c_current_dir m_curr_dir;
+		owd_lib::c_current_dir m_curr_dir;
 		std::wstring		m_curr_dir_str;
 
 		std::wstring		m_logs_folder_path;

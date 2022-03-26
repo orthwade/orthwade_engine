@@ -1,6 +1,6 @@
 #include "c_texture_bank.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_texture_bank* c_texture_bank::m_singleton = nullptr;
 

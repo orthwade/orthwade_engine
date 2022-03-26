@@ -1,7 +1,7 @@
 #pragma once
 #include <codecvt>
 
-namespace owd
+namespace owd_lib
 {
 	class c_convert_strings
 	{

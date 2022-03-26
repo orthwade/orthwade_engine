@@ -3,7 +3,7 @@
 #include "c_graphic_batch_textured.h"
 #include "../c_texture_uniform.h"
 
-namespace owd
+namespace owd_lib
 {
 	typedef std::shared_ptr<c_graphic_batch> g_batch_t;
 	typedef std::shared_ptr<c_graphic_batch_textured> g_batch_textured_t;

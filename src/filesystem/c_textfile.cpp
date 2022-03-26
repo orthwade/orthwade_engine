@@ -1,6 +1,6 @@
 #include "c_textfile.h"
 
-namespace owd
+namespace owd_lib
 {
     c_textfile::c_textfile()
     {

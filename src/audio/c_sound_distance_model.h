@@ -1,7 +1,7 @@
 #pragma once
 #include "c_openal_object.h"
 
-namespace owd
+namespace owd_lib
 {
 	enum class enum_distance_model
 	{

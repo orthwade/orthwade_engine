@@ -4,7 +4,7 @@
 
 
 
-namespace owd
+namespace owd_lib
 {
 
 	static size_t read(void* buffer, size_t element_size, size_t element_count, void* data_source) 

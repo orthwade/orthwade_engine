@@ -3,7 +3,7 @@
 #include "../c_texture_uniform.h"
 #include "../c_texture_bank.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_graphic_unit_textured
 	{
@@ -36,6 +36,7 @@ namespace owd
 		//	float red, float green, float blue, float alpha);
 
 		void set_position(float centre_x, float centre_y);
+		void move(float delta_x, float delta_y);
 
 		//void resize(float size_multiplier);
 
@@ -68,7 +69,7 @@ namespace owd
 		inline void set_global_index(index_t index) { m_global_index = index; }
 
 		static std::shared_ptr<c_graphic_unit_textured>& empty_unit();
-		static xy_t centre(const vertices_t & vertex_positions);
+		static xy_t centre(const vertices_t& vertex_positions, const gl_indices_t& indices);
 
 		float m_index = 0.0f;
 

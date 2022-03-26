@@ -1,7 +1,7 @@
 #pragma once
 #include "c_graphic_unit_textured.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_graphic_batch_textured
 	{

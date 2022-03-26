@@ -1,6 +1,6 @@
 #pragma once
 
-namespace owd
+namespace owd_lib
 {
 	struct s_polar_coordinates
 	{

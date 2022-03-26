@@ -1,6 +1,6 @@
 #include "c_vertex_buffer_layout.h"
 
-namespace owd
+namespace owd_lib
 {
     c_vertex_buffer_layout::c_vertex_buffer_layout()
     {
@@ -29,7 +29,7 @@ namespace owd
         m_logger << "----Copy construction from [" << other.m_name << "] of [" << m_name << "] OK----\n";
     }
 
-    c_vertex_buffer_layout& owd::c_vertex_buffer_layout::operator=(const c_vertex_buffer_layout& other)
+    c_vertex_buffer_layout& owd_lib::c_vertex_buffer_layout::operator=(const c_vertex_buffer_layout& other)
     {
         m_logger << "----Assigning [" << other.m_name << "] to [" << m_name << "] START----\n";
         {

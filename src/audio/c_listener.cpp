@@ -1,6 +1,6 @@
 #include "c_listener.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_listener* c_listener::m_singleton = nullptr;
 	
@@ -174,7 +174,7 @@ namespace owd
 		m_logger << "----openal_listener constructor SUCCESS----\n";
 	}
 
-	c_listener* owd::c_listener::get_instance()
+	c_listener* owd_lib::c_listener::get_instance()
 	{
 		if (m_singleton == nullptr)
 		{

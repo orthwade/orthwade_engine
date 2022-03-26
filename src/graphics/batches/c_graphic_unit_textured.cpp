@@ -1,6 +1,6 @@
 #include "c_graphic_unit_textured.h"
 
-namespace owd
+namespace owd_lib
 {
 	std::shared_ptr<c_graphic_unit_textured> c_graphic_unit_textured::m_empty_unit = std::shared_ptr<c_graphic_unit_textured>();
 
@@ -37,6 +37,14 @@ namespace owd
 		m_x = centre_x;
 		m_y = centre_y;
 		m_centre = { centre_x, centre_y };
+		m_should_update = true;
+	}
+
+	void c_graphic_unit_textured::move(float delta_x, float delta_y)
+	{
+		m_x += delta_x;
+		m_y += delta_y;
+		m_centre = { m_x, m_y };
 		m_should_update = true;
 	}
 
@@ -91,19 +99,20 @@ namespace owd
 		return m_empty_unit;
 	}
 
-	xy_t c_graphic_unit_textured::centre(const vertices_t& vertex_positions)
+	xy_t c_graphic_unit_textured::centre(const vertices_t& vertex_positions, const gl_indices_t& indices)
 	{
 		xy_t result{ 0.0f, 0.0f };
 
-		size_t vertices_count = vertex_positions.size() / 2;
+		size_t indices_count = indices.size();
 
-		for (index_t i = 0; i < vertices_count; ++i, ++i)
+		for (index_t i = 0; i < indices_count; ++i)
 		{
-			result += { vertex_positions[i], vertex_positions[i + 1] };
+			result += { vertex_positions[indices[i] * 2], vertex_positions[indices[i] * 2 + 1] };
 		}
 
-		result /= static_cast<float>(vertices_count);
+		result /= static_cast<float>(indices_count);
 
 		return result;
 	}
+
 }

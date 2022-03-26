@@ -1,7 +1,7 @@
 #pragma once
 #include "s_xy.h"
 
-namespace owd
+namespace owd_lib
 {
 	typedef std::vector<float> vertices_t;
 	namespace geom

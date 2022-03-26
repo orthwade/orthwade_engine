@@ -6,7 +6,7 @@
 #include "../debug/c_ogl_debug.h"
 #include "../misc/c_async_timer.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_window : public c_basic_object
 	{

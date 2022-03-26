@@ -2,7 +2,7 @@
 #include "c_sound_source.h"
 #include "../misc/c_object_bank.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_sound_source_bank : public c_object_bank<c_sound_source>
 	{

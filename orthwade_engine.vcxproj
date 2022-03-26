@@ -225,6 +225,8 @@
     <ClCompile Include="src\graphics\rect\c_single_textured_rect.cpp" />
     <ClCompile Include="src\graphics\stb_image\stb_image.cpp" />
     <ClCompile Include="src\include\graphics_include\graphics_include.cpp" />
+    <ClCompile Include="src\include\input_include\input_include.cpp" />
+    <ClCompile Include="src\include\strings_include\strings_include.cpp" />
     <ClCompile Include="src\input\c_input_manager.cpp">
       <SubType>
       </SubType>
@@ -447,6 +449,8 @@
     <ClInclude Include="src\graphics\rect\c_single_textured_rect.h" />
     <ClInclude Include="src\graphics\stb_image\stb_image.h" />
     <ClInclude Include="src\include\graphics_include\graphics_include.h" />
+    <ClInclude Include="src\include\input_include\input_include.h" />
+    <ClInclude Include="src\include\strings_include\strings_include.h" />
     <ClInclude Include="src\input\c_input_manager.h">
       <SubType>
       </SubType>

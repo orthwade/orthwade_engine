@@ -1,7 +1,7 @@
 #pragma once
 #include "c_file.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_textfile : public c_file
 	{

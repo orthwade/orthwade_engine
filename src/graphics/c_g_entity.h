@@ -2,7 +2,7 @@
 #include <mutex>
 #include <string_view>
 
-namespace owd
+namespace owd_lib
 {
 	/// <summary>
 	/// Graphic entity. Entity to be drawn.

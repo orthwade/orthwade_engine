@@ -1,6 +1,6 @@
 #include "c_convert_strings.h"
 
-namespace owd
+namespace owd_lib
 {
     c_convert_strings* c_convert_strings::m_singleton = nullptr;
 

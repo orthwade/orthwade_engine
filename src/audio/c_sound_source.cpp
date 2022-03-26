@@ -1,6 +1,6 @@
 #include "c_sound_source.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_sound_source::c_sound_source()
 	{

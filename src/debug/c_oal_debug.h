@@ -2,7 +2,7 @@
 #include "logger/logger.h"
 #include "../audio/openal/openal.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_oal_debug
 	{

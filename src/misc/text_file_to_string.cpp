@@ -3,7 +3,7 @@
 static std::wifstream ifs{};
 
 
-std::wstring owd::text_file_to_wstring(std::wstring_view filepath)
+std::wstring owd_lib::text_file_to_wstring(std::wstring_view filepath)
 {
 	ifs.open(filepath.data());
 
@@ -14,7 +14,7 @@ std::wstring owd::text_file_to_wstring(std::wstring_view filepath)
 	return content;
 }
 
-std::string owd::text_file_to_string(std::wstring_view filepath)
+std::string owd_lib::text_file_to_string(std::wstring_view filepath)
 {
 	ifs.open(filepath.data());
 

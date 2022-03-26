@@ -2,7 +2,7 @@
 #include "c_vertex_buffer.h"
 #include "c_vertex_buffer_layout.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_vertex_array
 	{

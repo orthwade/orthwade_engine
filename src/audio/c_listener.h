@@ -2,7 +2,7 @@
 #include "c_openal_object.h"
 #include "../math/vectors/c_orientation.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_listener : public c_openal_object
 	{

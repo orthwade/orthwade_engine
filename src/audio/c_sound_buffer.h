@@ -2,7 +2,7 @@
 #include "c_openal_object.h"
 
 
-namespace owd
+namespace owd_lib
 {
 	class c_sound_buffer : public c_openal_object
 	{

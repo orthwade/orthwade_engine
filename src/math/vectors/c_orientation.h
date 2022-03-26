@@ -3,7 +3,7 @@
 #include "../../misc/misc_defines.h"
 #include "c_vector.h"
 
-namespace owd
+namespace owd_lib
 {
 	/// <summary>
 	/// Object contataining data and methods to handle orientation of the entity.

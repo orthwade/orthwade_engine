@@ -3,7 +3,7 @@
 #include "c_sound.h"
 #include "c_sound_distance_model.h"
 
-namespace owd
+namespace owd_lib
 {
 	struct s_sound_
 	{

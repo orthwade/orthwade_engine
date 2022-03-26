@@ -1,6 +1,6 @@
 #include "c_file.h"
 
-namespace owd
+namespace owd_lib
 {
     c_file::c_file()
     {

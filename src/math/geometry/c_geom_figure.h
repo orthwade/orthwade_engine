@@ -4,7 +4,7 @@
 #include "c_polar_coordinates.h"
 #include "s_xy.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_geom_figure
 	{

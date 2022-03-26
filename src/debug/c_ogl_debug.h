@@ -2,7 +2,7 @@
 #include "logger/logger.h"
 #include "../graphics/opengl/opengl.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_ogl_debug
 	{

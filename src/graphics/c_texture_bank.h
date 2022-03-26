@@ -2,7 +2,7 @@
 #include "../filesystem/c_file_bank.h"
 #include "c_texture.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_texture_bank : public c_file_bank<c_texture>
 	{

@@ -1,5 +1,5 @@
 #include "c_vector.h"
-namespace owd
+namespace owd_lib
 {
 	c_3d_vector::c_3d_vector()
 	{

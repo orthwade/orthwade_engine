@@ -1,6 +1,6 @@
 #include "c_g_entity.h"
 
-namespace owd
+namespace owd_lib
 {
     c_g_entity::c_g_entity()
     {

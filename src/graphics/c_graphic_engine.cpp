@@ -1,6 +1,6 @@
 #include "c_graphic_engine.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_graphic_engine* c_graphic_engine::m_singleton = nullptr;
 	GLint c_graphic_engine::m_max_batch_textures = 2;
@@ -159,7 +159,7 @@ namespace owd
 		return m_max_batch_textures;
 	}
 
-	c_graphic_engine* owd::c_graphic_engine::get_instance()
+	c_graphic_engine* owd_lib::c_graphic_engine::get_instance()
 	{
 		if (m_singleton == nullptr)
 		{

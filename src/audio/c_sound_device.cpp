@@ -1,6 +1,6 @@
 #include "c_sound_device.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_sound_device* c_sound_device::m_singleton = nullptr;
 

@@ -1,6 +1,6 @@
 #include "c_colour_uniform.h"
 
-namespace owd
+namespace owd_lib
 {
     c_colour_uniform::c_colour_uniform()
     {
@@ -29,7 +29,7 @@ namespace owd
         m_logger << "----Copy construction from [" << other.m_name << "] of [" << m_name << "] OK----\n";
     }
 
-    c_colour_uniform& owd::c_colour_uniform::operator=(const c_colour_uniform& other)
+    c_colour_uniform& owd_lib::c_colour_uniform::operator=(const c_colour_uniform& other)
     {
         m_logger << "----Assigning [" << other.m_name << "] to [" << m_name << "] START----\n";
         {

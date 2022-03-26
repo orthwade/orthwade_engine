@@ -1,7 +1,7 @@
 #pragma once
 #include "c_basic_object.h"
 
-namespace owd
+namespace owd_lib
 {
 	template <class T>
 	class c_object_bank

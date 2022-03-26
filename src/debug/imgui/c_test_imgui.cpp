@@ -1,6 +1,6 @@
 #include "c_test_imgui.h"
 
-namespace owd
+namespace owd_lib
 {
     c_test_imgui::c_test_imgui()
     {
@@ -29,7 +29,7 @@ namespace owd
         m_logger << "----Copy construction from [" << other.m_name << "] of [" << m_name << "] OK----\n";
     }
 
-    c_test_imgui& owd::c_test_imgui::operator=(const c_test_imgui& other)
+    c_test_imgui& owd_lib::c_test_imgui::operator=(const c_test_imgui& other)
     {
         m_logger << "----Assigning [" << other.m_name << "] to [" << m_name << "] START----\n";
         {
@@ -190,7 +190,7 @@ namespace owd
     {
         m_vec_checkboxes.push_back({ value, name });
     }
-    void owd::c_test_imgui::add_listbox
+    void owd_lib::c_test_imgui::add_listbox
     (std::vector<enm_log_mode> vec_values, enm_log_mode& value_handle, std::vector<std::wstring_view> item_names, 
         std::wstring_view name)
     {

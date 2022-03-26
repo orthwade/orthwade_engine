@@ -5,7 +5,7 @@
 #include "ogg/ogg_.h"
 #include "openal/openal.h"
 
-namespace owd
+namespace owd_lib
 {
 	/// <summary>
 	/// c_sound class

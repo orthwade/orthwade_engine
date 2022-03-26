@@ -1,6 +1,6 @@
 #include "c_sound_engine.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_sound_engine* c_sound_engine::m_singleton = nullptr;
 
@@ -44,27 +44,27 @@ namespace owd
 		return m_sound_bank.by_index(i);
 	}
 
-	std::shared_ptr<c_sound>& owd::c_sound_engine::get_sound_by_name(std::wstring_view name)
+	std::shared_ptr<c_sound>& owd_lib::c_sound_engine::get_sound_by_name(std::wstring_view name)
 	{
 		return m_sound_bank.by_name(name);
 	}
 
-	std::shared_ptr<c_sound>& owd::c_sound_engine::get_sound_by_filepath(std::wstring_view name)
+	std::shared_ptr<c_sound>& owd_lib::c_sound_engine::get_sound_by_filepath(std::wstring_view name)
 	{
 		return m_sound_bank.by_filepath(name);
 	}
 
-	void owd::c_sound_engine::erase_sound_by_index(index_t i)
+	void owd_lib::c_sound_engine::erase_sound_by_index(index_t i)
 	{
 		m_sound_bank.erase(i);
 	}
 
-	void owd::c_sound_engine::erase_sound_by_name(std::wstring_view name)
+	void owd_lib::c_sound_engine::erase_sound_by_name(std::wstring_view name)
 	{
 		m_sound_bank.erase(name);
 	}
 
-	void owd::c_sound_engine::erase_sound_by_filepath(std::wstring_view filepath)
+	void owd_lib::c_sound_engine::erase_sound_by_filepath(std::wstring_view filepath)
 	{
 		m_sound_bank.erase_by_filepath(filepath);
 	}
@@ -79,17 +79,17 @@ namespace owd
 		m_sound_source_bank.add(other);
 	}
 
-	void owd::c_sound_engine::add_source(std::shared_ptr<c_sound_source>& other)
+	void owd_lib::c_sound_engine::add_source(std::shared_ptr<c_sound_source>& other)
 	{
 		m_sound_source_bank.add(other);
 	}
 
-	std::shared_ptr<c_sound_source>& owd::c_sound_engine::get_sound_source(index_t i)
+	std::shared_ptr<c_sound_source>& owd_lib::c_sound_engine::get_sound_source(index_t i)
 	{
 		return m_sound_source_bank.by_index(i);
 	}
 
-	std::shared_ptr<c_sound_source>& owd::c_sound_engine::get_sound_source(std::wstring_view name)
+	std::shared_ptr<c_sound_source>& owd_lib::c_sound_engine::get_sound_source(std::wstring_view name)
 	{
 		return m_sound_source_bank.by_name(name);
 	}
@@ -132,7 +132,7 @@ namespace owd
 		return false;
 	}
 
-	bool owd::c_sound_engine::attach_sound(std::wstring_view sound_name, std::shared_ptr<c_sound_source>& sound_source)
+	bool owd_lib::c_sound_engine::attach_sound(std::wstring_view sound_name, std::shared_ptr<c_sound_source>& sound_source)
 	{
 		auto sound = get_sound_by_name(sound_name);
 
@@ -147,7 +147,7 @@ namespace owd
 		return false;
 	}
 
-	bool owd::c_sound_engine::attach_sound(std::shared_ptr<c_sound>& sound, std::shared_ptr<c_sound_source>& sound_source)
+	bool owd_lib::c_sound_engine::attach_sound(std::shared_ptr<c_sound>& sound, std::shared_ptr<c_sound_source>& sound_source)
 	{
 		if (sound->good())
 		{
@@ -160,7 +160,7 @@ namespace owd
 		return false;
 	}
 
-	bool owd::c_sound_engine::attach_sound(std::shared_ptr<c_sound>& sound, std::wstring_view source_name)
+	bool owd_lib::c_sound_engine::attach_sound(std::shared_ptr<c_sound>& sound, std::wstring_view source_name)
 	{
 		if (sound->good())
 		{
@@ -172,7 +172,7 @@ namespace owd
 		return false;
 	}
 
-	bool owd::c_sound_engine::detach_sound(std::wstring_view sound_name, std::wstring_view source_name)
+	bool owd_lib::c_sound_engine::detach_sound(std::wstring_view sound_name, std::wstring_view source_name)
 	{
 		auto sound = get_sound_by_name(sound_name);
 
@@ -189,7 +189,7 @@ namespace owd
 		return false;
 	}
 
-	bool owd::c_sound_engine::detach_sound(std::wstring_view sound_name, std::shared_ptr<c_sound_source>& sound_source)
+	bool owd_lib::c_sound_engine::detach_sound(std::wstring_view sound_name, std::shared_ptr<c_sound_source>& sound_source)
 	{
 		auto sound = get_sound_by_name(sound_name);
 
@@ -204,7 +204,7 @@ namespace owd
 		return false;
 	}
 
-	bool owd::c_sound_engine::detach_sound(std::shared_ptr<c_sound>& sound, std::wstring_view source_name)
+	bool owd_lib::c_sound_engine::detach_sound(std::shared_ptr<c_sound>& sound, std::wstring_view source_name)
 	{
 		if (sound->good())
 		{
@@ -232,7 +232,7 @@ namespace owd
 		return false;
 	}
 
-	bool owd::c_sound_engine::detach_sound(std::wstring_view source_name)
+	bool owd_lib::c_sound_engine::detach_sound(std::wstring_view source_name)
 	{
 		bool result = false;
 
@@ -247,7 +247,7 @@ namespace owd
 		return result;
 	}
 
-	bool owd::c_sound_engine::detach_sound(std::shared_ptr<c_sound_source>& sound_source)
+	bool owd_lib::c_sound_engine::detach_sound(std::shared_ptr<c_sound_source>& sound_source)
 	{
 		bool result = false;
 
@@ -268,7 +268,7 @@ namespace owd
 		}
 	}
 
-	c_sound_engine* owd::c_sound_engine::get_instance()
+	c_sound_engine* owd_lib::c_sound_engine::get_instance()
 	{
 		if (m_singleton == nullptr)
 		{

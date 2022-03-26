@@ -4,7 +4,7 @@
 #include <time.h>
 #include <string>
 
-namespace owd
+namespace owd_lib
 {
 	class c_time_date
 	{

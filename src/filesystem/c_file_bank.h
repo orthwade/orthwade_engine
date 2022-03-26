@@ -2,7 +2,7 @@
 #include "c_file.h"
 #include "../misc/c_object_bank.h"
 
-namespace owd
+namespace owd_lib
 {
     template <class T>
     class c_file_bank : public c_object_bank<T>
@@ -47,7 +47,7 @@ namespace owd
         return load(filepath, filepath);
     }
     template<class T>
-    bool owd::c_file_bank<T>::load(std::wstring_view filepath, std::wstring_view name)
+    bool owd_lib::c_file_bank<T>::load(std::wstring_view filepath, std::wstring_view name)
     {
         bool result = false;
 

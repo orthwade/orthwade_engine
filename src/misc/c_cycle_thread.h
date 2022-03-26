@@ -6,7 +6,7 @@
 #include "../debug/logger/logger.h"
 #include "sleep_for/c_sleep_for.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_cycle_thread
 	{

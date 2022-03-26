@@ -4,7 +4,7 @@
 #include <array>
 #include <thread>
 
-namespace owd
+namespace owd_lib
 {
 	typedef uint8_t byte_t;
 	typedef uint64_t index_t;

@@ -1,6 +1,6 @@
 #include "c_sound_distance_model.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_sound_distance_model* c_sound_distance_model::m_singleton = nullptr;
 

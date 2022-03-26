@@ -1,6 +1,6 @@
 #include "c_batch_coloured_circle.h"
 
-namespace owd
+namespace owd_lib
 {
 	std::shared_ptr<c_coloured_circle> c_coloured_circle::m_empty_circle = std::shared_ptr<c_coloured_circle>();
 

@@ -2,7 +2,7 @@
 #include <atomic>
 #include "misc_defines.h"
 
-namespace owd
+namespace owd_lib
 {
 		
 	class c_async_timer

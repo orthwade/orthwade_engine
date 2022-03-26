@@ -1,6 +1,6 @@
 #include "c_mat4_uniform.h"
 
-namespace owd
+namespace owd_lib
 {
     c_mat4_uniform::c_mat4_uniform()
     {
@@ -29,7 +29,7 @@ namespace owd
         m_logger << "----Copy construction from [" << other.m_name << "] of [" << m_name << "] OK----\n";
     }
 
-    c_mat4_uniform& owd::c_mat4_uniform::operator=(const c_mat4_uniform& other)
+    c_mat4_uniform& owd_lib::c_mat4_uniform::operator=(const c_mat4_uniform& other)
     {
         m_logger << "----Assigning [" << other.m_name << "] to [" << m_name << "] START----\n";
         {

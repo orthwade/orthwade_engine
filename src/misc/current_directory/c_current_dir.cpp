@@ -1,6 +1,6 @@
 #include "c_current_dir.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_current_dir::c_current_dir()
 	{

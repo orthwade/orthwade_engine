@@ -10,7 +10,7 @@
 #include "../../math/glm/ext/matrix_clip_space.hpp"
 #include "../c_window.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_single_textured_rect : public c_basic_object
 	{

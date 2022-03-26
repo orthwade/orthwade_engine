@@ -11,13 +11,11 @@ void owd::run()
 	auto graphic_engine = c_graphic_engine::get_instance();
 	graphic_engine->run();
 }
-
 void owd::terminate()
 {
 	auto graphic_engine = c_graphic_engine::get_instance();
 	graphic_engine->terminate();
 }
-
 uint64_t owd::add_graphic_unit(float centre_x, float centre_y, float width, float height, float red, float green, float blue, float alpha, uint16_t level)
 {
 	auto graphic_engine = c_graphic_engine::get_instance();

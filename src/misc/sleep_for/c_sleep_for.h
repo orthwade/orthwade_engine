@@ -2,7 +2,7 @@
 #include <thread>
 #include <chrono>
 
-namespace owd
+namespace owd_lib
 {
 	class c_sleep_for_ms
 	{

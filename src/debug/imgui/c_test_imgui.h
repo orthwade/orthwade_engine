@@ -29,7 +29,7 @@ static void glfw_error_callback(int error, const char* description)
 	fprintf(stderr, "Glfw Error %d: %s\n", error, description);
 }
 
-namespace owd
+namespace owd_lib
 {
 
 	class c_imgui_slider
@@ -89,7 +89,7 @@ namespace owd
 	};
 
 	template<typename T>
-	owd::c_imgui_list<T>::c_imgui_list
+	owd_lib::c_imgui_list<T>::c_imgui_list
 	(std::vector<T> vec_values, T& value_handle, std::vector<std::wstring_view> item_names,
 		std::wstring_view name)
 	{
@@ -107,7 +107,7 @@ namespace owd
 	{
 	}
 	template<typename T>
-	void owd::c_imgui_list<T>::operator()()
+	void owd_lib::c_imgui_list<T>::operator()()
 	{
 		auto name_utf_8_string = c_convert_strings::utf_8(m_name);
 		const char* label = name_utf_8_string.c_str();

@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-namespace owd
+namespace owd_lib
 {
 	namespace geom
 	{

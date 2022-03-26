@@ -1,6 +1,6 @@
 #include "c_vertex_array.h"
 
-namespace owd
+namespace owd_lib
 {
     c_vertex_array::c_vertex_array()
     {
@@ -31,7 +31,7 @@ namespace owd
         m_logger << "----Copy construction from [" << other.m_name << "] of [" << m_name << "] OK----\n";
     }
 
-    c_vertex_array& owd::c_vertex_array::operator=(const c_vertex_array& other)
+    c_vertex_array& owd_lib::c_vertex_array::operator=(const c_vertex_array& other)
     {
         m_logger << "----Assigning [" << other.m_name << "] to [" << m_name << "] START----\n";
         {

@@ -1,6 +1,6 @@
 #include "c_files_in_directory.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_files_in_directory::c_files_in_directory()
 	{

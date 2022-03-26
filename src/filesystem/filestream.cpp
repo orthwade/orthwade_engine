@@ -1,5 +1,5 @@
 #include "filestream.h"
-namespace owd
+namespace owd_lib
 {
 	c_ifstream::c_ifstream()
 	{

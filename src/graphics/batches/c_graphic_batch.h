@@ -1,7 +1,7 @@
 #pragma once
 #include "c_graphic_unit.h"
 
-namespace owd
+namespace owd_lib
 {
 	typedef std::shared_ptr<c_graphic_unit> g_unit_t;
 	class c_graphic_batch

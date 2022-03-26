@@ -12,7 +12,7 @@
 #include "../c_colour_uniform.h"
 #include "../c_shader_bank.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_coloured_rect
 	{

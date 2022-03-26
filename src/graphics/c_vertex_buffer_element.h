@@ -2,7 +2,7 @@
 #include "../debug/c_ogl_debug.h"
 
 
-namespace owd
+namespace owd_lib
 {
 	class c_vertex_buffer_element
 	{

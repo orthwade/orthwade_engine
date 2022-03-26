@@ -1,6 +1,6 @@
 #include "c_batch_textured_rect.h"
 
-namespace owd
+namespace owd_lib
 {
 	std::shared_ptr<c_textured_rect> c_batch_textured_rect::m_empty_rect = std::shared_ptr<c_textured_rect>();
 	c_textured_rect::c_textured_rect()

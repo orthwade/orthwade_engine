@@ -1,6 +1,6 @@
 #include "c_shader_bank.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_shader_bank* c_shader_bank::m_singleton = nullptr;
 	

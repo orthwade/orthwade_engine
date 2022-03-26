@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include "../graphics/c_graphic_engine.h"
 
-namespace owd
+namespace owd_lib
 {
 	void key_callback(GLFWwindow* window, int32_t key, int32_t scancode, int32_t action, int32_t mods);
 	void mouse_button_callback(GLFWwindow* window, int32_t button, int32_t action, int32_t mods);
@@ -33,6 +33,7 @@ namespace owd
 		static void terminate();
 
 	protected:
+		std::mutex m_mutex{};
 		std::vector<s_key> m_keys{};
 		static c_input_manager* m_singleton;
 

@@ -14,7 +14,7 @@
 #include "../c_shader_bank.h"
 #include "c_graphic_unit.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_coloured_circle
 	{

@@ -2,7 +2,7 @@
 #include "../filesystem/c_file_bank.h"
 #include "c_shader.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_shader_bank : public c_file_bank<c_shader>
 	{

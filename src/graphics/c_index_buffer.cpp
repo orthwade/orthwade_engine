@@ -1,6 +1,6 @@
 #include "c_index_buffer.h"
 
-namespace owd
+namespace owd_lib
 {
     c_index_buffer::c_index_buffer()
     {
@@ -33,7 +33,7 @@ namespace owd
         m_logger << "----Copy construction from [" << other.m_name << "] of [" << m_name << "] OK----\n";
     }
 
-    c_index_buffer& owd::c_index_buffer::operator=(const c_index_buffer& other)
+    c_index_buffer& owd_lib::c_index_buffer::operator=(const c_index_buffer& other)
     {
         m_logger << "----Assigning [" << other.m_name << "] to [" << m_name << "] START----\n";
         {

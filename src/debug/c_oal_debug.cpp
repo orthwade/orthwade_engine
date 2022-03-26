@@ -1,10 +1,10 @@
 #include "c_oal_debug.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_oal_debug* c_oal_debug::m_singleton = nullptr;
 
-	c_oal_debug* owd::c_oal_debug::get_instance()
+	c_oal_debug* owd_lib::c_oal_debug::get_instance()
 	{
 		if (m_singleton == nullptr)
 		{

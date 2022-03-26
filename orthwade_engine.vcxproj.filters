@@ -255,6 +255,12 @@
     <ClCompile Include="src\include\graphics_include\graphics_include.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\include\input_include\input_include.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\include\strings_include\strings_include.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\audio\ogg\codec.h">
@@ -1698,6 +1704,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\graphics_include\graphics_include.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\input_include\input_include.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\strings_include\strings_include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

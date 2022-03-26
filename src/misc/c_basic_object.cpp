@@ -1,6 +1,6 @@
 #include "c_basic_object.h"
 
-namespace owd
+namespace owd_lib
 {
     bool c_basic_object::good() const
     {

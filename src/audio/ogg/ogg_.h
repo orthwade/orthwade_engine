@@ -16,7 +16,7 @@
 #pragma comment(lib, "vorbisenc.lib")
 #pragma comment(lib, "vorbis.lib")
 
-namespace owd
+namespace owd_lib
 {
 	class c_ogg_file : public c_sound_file
 	{

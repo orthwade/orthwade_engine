@@ -1,6 +1,6 @@
 #include "c_graphic_unit.h"
 
-namespace owd
+namespace owd_lib
 {
 	std::shared_ptr<c_graphic_unit> c_graphic_unit::m_empty_unit = std::shared_ptr<c_graphic_unit>();
 
@@ -32,7 +32,7 @@ namespace owd
 		m_colour({ red, green, blue, alpha }),
 		m_level(level)
 	{
-		m_centre = centre(vertex_positions);
+		m_centre = centre(vertex_positions, indices);
 		m_vertices.resize(3 * m_vertex_positions.size());
 
 		index_t vertex_positions_index = 0;
@@ -57,7 +57,7 @@ namespace owd
 	{
 		m_vertex_positions = vertex_positions;
 		m_indices  = indices;
-		m_centre = centre(vertex_positions);
+		m_centre = centre(vertex_positions, indices);
 		m_vertices.resize(3 * m_vertex_positions.size());
 
 		index_t vertex_positions_index = 0;
@@ -80,7 +80,7 @@ namespace owd
 		m_vertex_positions = vertex_positions;
 		m_indices = indices;
 		m_colour = { red, green, blue, alpha };
-		m_centre = centre(vertex_positions);
+		m_centre = centre(vertex_positions, indices);
 		m_vertices.resize(3 * m_vertex_positions.size());
 
 		index_t vertex_positions_index = 0;
@@ -150,6 +150,26 @@ namespace owd
 			vertices_index += 6;
 		}
 		m_centre = { centre_x, centre_y };
+		m_should_update = true;
+	}
+
+	void c_graphic_unit::move(float delta_x, float delta_y)
+	{
+		index_t vertex_positions_index = 0;
+		index_t vertices_index = 0;
+
+		while (vertex_positions_index < m_vertex_positions.size())
+		{
+			m_vertex_positions[vertex_positions_index] += delta_x;
+			m_vertex_positions[vertex_positions_index + 1] += delta_y;
+
+			m_vertices[vertices_index] = m_vertex_positions[vertex_positions_index];
+			m_vertices[vertices_index + 1] = m_vertex_positions[vertex_positions_index + 1];
+
+			vertex_positions_index += 2;
+			vertices_index += 6;
+		}
+		m_centre = centre(m_vertex_positions, m_indices);
 		m_should_update = true;
 	}
 
@@ -230,18 +250,18 @@ namespace owd
 		return m_empty_unit;
 	}
 
-	xy_t c_graphic_unit::centre(const vertices_t& vertex_positions)
+	xy_t c_graphic_unit::centre(const vertices_t& vertex_positions, const gl_indices_t& indices)
 	{
 		xy_t result{ 0.0f, 0.0f };
 
-		size_t vertices_count = vertex_positions.size() / 2;
+		size_t indices_count = indices.size();
 
-		for (index_t i = 0; i < vertices_count; ++i, ++i)
+		for (index_t i = 0; i < indices_count; ++i)
 		{
-			result += { vertex_positions[i], vertex_positions[i + 1] };
+			result += { vertex_positions[indices[i] * 2], vertex_positions[indices[i] * 2 + 1] };
 		}
 
-		result /= static_cast<float>(vertices_count);
+		result /= static_cast<float>(indices_count);
 
 		return result;
 	}

@@ -3,7 +3,7 @@
 #include "../filesystem/c_textfile.h"
 #include "c_colour_uniform.h"
 
-namespace owd
+namespace owd_lib
 {
 	struct s_shader
 	{
@@ -63,7 +63,7 @@ namespace owd
 
 }
 
-namespace owd
+namespace owd_lib
 {
 	class c_shader : public c_textfile
 	{

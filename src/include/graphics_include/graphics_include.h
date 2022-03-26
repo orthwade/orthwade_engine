@@ -3,6 +3,8 @@
 
 namespace owd
 {
+	using namespace owd_lib;
+	typedef uint64_t index_t;
 	/// <summary>
 	/// Create window.
 	/// </summary>

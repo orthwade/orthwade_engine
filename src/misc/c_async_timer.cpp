@@ -1,6 +1,6 @@
 #include "c_async_timer.h"
 
-namespace owd
+namespace owd_lib
 {
     c_async_timer::c_async_timer()
     {

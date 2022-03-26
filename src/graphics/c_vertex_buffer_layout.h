@@ -1,7 +1,7 @@
 #pragma once
 #include "c_vertex_buffer_element.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_vertex_buffer_layout
 	{

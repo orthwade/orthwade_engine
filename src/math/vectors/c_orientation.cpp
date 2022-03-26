@@ -1,6 +1,6 @@
 #include "c_orientation.h"
 
-namespace owd
+namespace owd_lib
 {
 	c_orientation::c_orientation()
 	{

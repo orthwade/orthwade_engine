@@ -1,7 +1,7 @@
 #pragma once
 #include "../debug/logger/logger.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_basic_object
 	{

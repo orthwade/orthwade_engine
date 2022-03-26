@@ -1,10 +1,10 @@
 #include "c_batch_handler.h"
 
-namespace owd
+namespace owd_lib
 {
     c_batch_handler* c_batch_handler::m_singleton = nullptr;
 
-    c_batch_handler* owd::c_batch_handler::get_instance()
+    c_batch_handler* owd_lib::c_batch_handler::get_instance()
     {
         if (m_singleton == nullptr)
         {
@@ -66,7 +66,7 @@ namespace owd
     }
 }
 
-namespace owd
+namespace owd_lib
 {
     s_level& c_batch_handler::get_level(uint16_t level)
     {

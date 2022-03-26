@@ -1,7 +1,7 @@
 #pragma once
 #include <filesystem>
 
-namespace owd
+namespace owd_lib
 {
 	class c_files_in_directory
 	{

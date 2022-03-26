@@ -1,6 +1,6 @@
 #include "c_graphic_batch.h"
 
-namespace owd
+namespace owd_lib
 {
     c_graphic_batch::c_graphic_batch()
         : c_graphic_batch(0)

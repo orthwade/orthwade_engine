@@ -2,7 +2,7 @@
 #include "../../debug/logger/logger.h"
 #include "../../misc/misc_defines.h"
 
-namespace owd
+namespace owd_lib
 {
 	/// <summary>
 	/// Object of a 3D-space vector with elements x, y, z.

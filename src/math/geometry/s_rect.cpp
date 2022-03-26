@@ -1,6 +1,6 @@
 #include "s_rect.h"
 
-namespace owd
+namespace owd_lib
 {
 	namespace geom
 	{

@@ -1,6 +1,6 @@
 #include "c_sound_file.h"
 
-namespace owd
+namespace owd_lib
 {
     c_sound_file::c_sound_file(std::wstring_view name)
     {

@@ -11,7 +11,7 @@
 #include "../c_window.h"
 #include "../c_colour_uniform.h"
 
-namespace owd
+namespace owd_lib
 {
 	class c_single_coloured_rect : public c_basic_object
 	{

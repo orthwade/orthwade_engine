@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "time_date.h"
 
-namespace owd
+namespace owd_lib
 {
 	
 	std::string_view c_time_date::operator()()
