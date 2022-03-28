@@ -49,7 +49,7 @@ namespace owd_lib
 		NO, YES
 	};
 
-	constexpr enm_log_mode default_log_mode = enm_log_mode::both;
+	constexpr owd_lib::enm_log_mode default_log_mode = enm_log_mode::both;
 
 	class c_logger
 	{

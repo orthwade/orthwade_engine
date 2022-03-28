@@ -96,6 +96,7 @@ namespace owd_lib
                         iter += i;
                         m_vec.erase(iter);
                         m_should_update = true;
+                        i = 0;
                     }
                 }
                 m_vertices_buffer.clear();
@@ -118,6 +119,7 @@ namespace owd_lib
                     auto indices_ = m_vec[i]->indices_batch(max_index_);
                     m_indices_buffer.insert
                     (m_indices_buffer.end(), indices_.begin(), indices_.end());
+                    m_vec[i]->m_should_update = false;
                 }
                 m_vertex_buffer.set(m_vertices_buffer);
                 m_index_buffer.set(m_indices_buffer);
