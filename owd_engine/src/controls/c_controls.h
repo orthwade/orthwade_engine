@@ -7,8 +7,7 @@
 #include <atomic>
 #include <mutex>
 
-#include <owd_input.h>
-#include <owd_strings.h>
+#include <owd_lib.h>
 
 namespace owd
 {
@@ -47,10 +46,14 @@ namespace owd
 		action_t& get_action(std::wstring_view name);
 		action_t& last_action();
 
+		std::vector<action_t>& get() { return m_vec_actions; }
+		
 		void init();
 
 		void run();
 		void stop();
+
+		void disable_controls();
 
 		static c_controls* get_instance();
 		static void terminate();

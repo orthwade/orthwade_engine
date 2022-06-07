@@ -9,6 +9,8 @@
 #include <owd_graphics.h>
 #include <owd_input.h>
 
+#ifndef owd_lib_link
+#define owd_lib_link
 #ifdef _DEBUG
 #pragma comment(lib,"x64/Debug/owd_misc.lib")
 #pragma comment(lib,"x64/Debug/owd_math.lib")
@@ -30,3 +32,5 @@
 #pragma comment(lib,"x64/Release/owd_graphics.lib")
 #pragma comment(lib,"x64/Release/owd_input.lib")
 #endif
+#endif // !owd_lib_link
+

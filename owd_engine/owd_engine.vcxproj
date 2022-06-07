@@ -22,14 +22,14 @@
     <ClInclude Include="include\owd_engine_.h" />
     <ClInclude Include="src\controls\c_controls.h" />
     <ClInclude Include="src\c_entity.h" />
+    <ClInclude Include="src\c_entity_motion_handler.h" />
     <ClInclude Include="src\c_pipeline.h" />
-    <ClInclude Include="src\owd_lib.h" />
-    <ClInclude Include="src\owd_static_lib_template_src.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\owd_engine_.cpp" />
     <ClCompile Include="src\controls\c_controls.cpp" />
     <ClCompile Include="src\c_entity.cpp" />
+    <ClCompile Include="src\c_entity_motion_handler.cpp" />
     <ClCompile Include="src\c_pipeline.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

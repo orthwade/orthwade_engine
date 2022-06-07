@@ -76,6 +76,15 @@ namespace owd
     {
         m_run.store(false);
     }
+    void c_controls::disable_controls()
+    {
+        std::mutex mtx{};
+        auto lock = std::lock_guard(mtx);
+        for (auto& action : m_vec_actions)
+        {
+            action->disable();
+        }
+    }
     void c_controls::thread_function()
     {
         while (true)
@@ -100,7 +109,7 @@ namespace owd
                     }
                 }
             }
-            
+            sleep_for_ms(1);
         }
     }
 }

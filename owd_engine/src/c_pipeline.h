@@ -21,7 +21,7 @@ namespace owd
 		inline void reset() { m_initial_action_complete = false; }
 
 		inline bool initial_action_complete() { return m_initial_action_complete; }
-
+		static std::shared_ptr<c_stage> make(std::wstring_view name, wstr_func_t& initial_action);
 	private:
 		static std::wstring m_empty_string;
 
@@ -38,7 +38,6 @@ namespace owd
 	};
 
 	typedef std::shared_ptr<c_stage> stage_t;
-	stage_t& make_stage(std::wstring_view name, wstr_func_t& initial_action);
 
 	class c_pipeline
 	{
@@ -46,6 +45,10 @@ namespace owd
 		void init();
 		void run();
 		void stop();
+
+		void enable_controls();
+		void disable_controls();
+
 		stage_t& add_stage(std::wstring_view name, wstr_func_t& initial_action);
 		stage_t& get_stage(std::wstring_view name);
 

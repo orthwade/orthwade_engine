@@ -1,4 +1,4 @@
-#include "c_pipeline.h"
+#include <iostream>
 
 #include "c_pipeline.h"
 
@@ -66,12 +66,12 @@ namespace owd
         m_initial_action_complete = true;
         enable_controls();
     }
-    static stage_t static_stage_buffer{};
-    stage_t& make_stage(std::wstring_view name, wstr_func_t& initial_action)
+    std::shared_ptr<c_stage> c_stage::make(std::wstring_view name, wstr_func_t& initial_action)
     {
-        static_stage_buffer = std::make_shared<c_stage>(name, initial_action);
-        return static_stage_buffer;
+        auto ptr = std::make_shared<c_stage>(name, initial_action);
+        return ptr;
     }
+
     void c_pipeline::init()
     {
         m_thread_exists.store(true);
@@ -120,10 +120,19 @@ namespace owd
 			m_singleton = nullptr;
 		}
 	}
+    void c_pipeline::enable_controls()
+    {
+        m_current_stage->enable_controls();
+    }
+    void c_pipeline::disable_controls()
+    {
+        m_current_stage->disable_controls();
+    }
     stage_t& c_pipeline::add_stage(std::wstring_view name, wstr_func_t& initial_action)
     {
-        auto stage = make_stage(name, initial_action);
+        auto stage = c_stage::make(name, initial_action);
         m_vec_stages.push_back(stage);
+
         return m_vec_stages.back();
     }
     stage_t& c_pipeline::get_stage(std::wstring_view name)
@@ -139,12 +148,23 @@ namespace owd
     }
     stage_t& c_pipeline::set_stage(std::wstring_view name)
     {
-        if (m_current_stage)
-        {
-            m_current_stage->disable_controls();
-        }
+        std::wcout << "Stage [" << name << "]\n";
+ 
         m_current_stage = get_stage(name);
         m_current_stage->reset();
+        
+        std::wcout << "Controls: \n";
+
+        auto& vec_contr = c_controls::get_instance()->get();
+
+        for (auto& c_ : vec_contr)
+        {
+            if (c_->is_enabled())
+            {
+                std::wcout << c_->name() << '\n';
+            }
+        }
+
         return m_current_stage;
     }
     void c_pipeline::thread_function()
@@ -168,7 +188,7 @@ namespace owd
             }
 
             // 2. Current stage will be changed in initial action of the stage or in controls action.
-
+            sleep_for_ms(1);
         }
     }
     c_pipeline::c_pipeline()
